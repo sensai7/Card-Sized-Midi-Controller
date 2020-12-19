@@ -29,8 +29,9 @@ int previousMedian[SIX] = {0,0,0,0,0,0};
 int sortBuff[BUFFER];
 
 //Leds
+int ledBrightness = 10; //3.9%
 int ledPort[SIX] = {LED0,LED1,LED2,LED3,LED4,LED5};
-int ledStatus[SIX] = {10,10,10,10,10,10};
+int ledStatus[SIX] = {ledBrightness,ledBrightness,ledBrightness,ledBrightness,ledBrightness,ledBrightness};
 
 //Switches
 int swPort[SIX] = {SW0,SW1,SW2,SW3,SW4,SW5};
@@ -80,17 +81,17 @@ void loop() {
 				break;
 				case 3:
 				allLedsOff(ledStatus);
-				ledStatus[channel]= 10;
+				ledStatus[channel]= ledBrightness;
 				updateLeds(ledPort, ledStatus);
 				break;
 				case 4:
 				allLedsOff(ledStatus);
-				ledStatus[channel]= 10;
+				ledStatus[channel]= ledBrightness;
 				updateLeds(ledPort, ledStatus);
 				break;
 				case 5:
 				allLedsOff(ledStatus);
-				ledStatus[channel]= 10;
+				ledStatus[channel]= ledBrightness;
 				updateLeds(ledPort, ledStatus);
 				break;
 			}
@@ -196,7 +197,7 @@ void updateLeds(int * leds, int * stat){
 void allLedsOn(int * stat){
 		int i;
 	for(i = 0; i < SIX; i++){
-		stat[i] = 10;
+		stat[i] = ledBrightness;
 	}
 }
 
