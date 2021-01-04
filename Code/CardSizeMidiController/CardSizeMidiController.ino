@@ -49,8 +49,6 @@ int mode = 0;
 int channel = 0;
 
 void setup() {
-	TCCR1B = TCCR1B & B11111000 | B00000010;
-	TCCR2B = TCCR2B & B11111000 | B00000011;
 	Serial.begin(31250);
 	for(int i = 0; i < SIX; i++){
 		pinMode(swPort[i], INPUT_PULLUP);
