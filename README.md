@@ -6,7 +6,7 @@
 ## Ordering your own board
 This repository includes the necessary files to order your own board with the SMT components pre-soldered from JLCPCB's assembly service. To do so, follow this: 
 
- 1. Go to their order page [LINK](cart.jlcpcb.com/quote) and upload the zipped gerber files. The default options should be fine, but you can customize your own board as you wish, the only thing I recommed changing is under "Remove Order Number" to "Specify a location"
+ 1. Go to their order page [LINK](https://cart.jlcpcb.com/quote) and upload the zipped gerber files. The default options should be fine, but you can customize your own board as you wish, the only thing I recommed changing is under "Remove Order Number" to "Specify a location"
  2. In the SMT Assembly select "Assemble top side", the quantity of boards (minimum is 2 as of today) and tooling holes added by JLCPCB.
  3. Add the BOM and CPL files when prompted and continue through the process.
 
