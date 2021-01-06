@@ -21,6 +21,17 @@
 //Pots
 #define BUFFER 11
 #define BUFFERSIZE 22 // BUFFER * sizeof(int)
+int logResponse[128] =  {0, 18, 29, 37, 42, 47, 51, 55, 58, 61, 63, 66, 68, 70, 71, 
+												73, 75, 76, 78, 79, 80, 82, 83, 84, 85, 86, 87, 88, 89, 90, 
+												91, 91, 92, 93, 94, 95, 95, 96, 97, 97, 98, 99, 99, 100, 100, 
+												101, 102, 102, 103, 103, 104, 104, 105, 105, 106, 106, 107, 
+												107, 108, 108, 108, 109, 109, 110, 110, 111, 111, 111, 112, 
+												112, 112, 113, 113, 114, 114, 114, 115, 115, 115, 116, 116, 
+												116, 117, 117, 117, 118, 118, 118, 118, 119, 119, 119, 120, 
+												120, 120, 120, 121, 121, 121, 121, 122, 122, 122, 123, 123, 
+												123, 123, 124, 124, 124, 124, 124, 125, 125, 125, 125, 126, 
+												126, 126, 126, 127, 127, 127, 127, 127, 128, 128, 128};
+int logness;
 int index = 0; //index is shared
 int potRead[BUFFER][SIX];
 int potPort[SIX] = {POT0,POT1,POT2,POT3,POT4,POT5};
@@ -96,6 +107,7 @@ void loop() {
 
 	// 2+3 
 	if(!currentButtonState[2] && !currentButtonState[3]){
+		logness = map(analogRead(potPort[5]), 0, 1023, 0, 255);
 		settingFlag = 1;
 	}
 
@@ -159,7 +171,7 @@ void loop() {
 				if (currentMedian[i] != previousMedian[i]){
 					int finalValue; 
 					int variation = random(-randomness, randomness);
-					finalValue = currentMedian[i] + variation;
+					finalValue = (currentMedian[i] * (255 - logness))/255 + (logResponse[currentMedian[i]] * logness)/255 + variation;
 						if(variation > 0 && finalValue > 127){
 							finalValue = 127;
 						}
