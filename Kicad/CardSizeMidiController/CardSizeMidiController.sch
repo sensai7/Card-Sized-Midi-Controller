@@ -1295,7 +1295,7 @@ U 1 1 5FDEC454
 P 8650 1850
 F 0 "J4" H 8370 1783 50  0000 R CNN
 F 1 "AudioJack3" H 8370 1874 50  0000 R CNN
-F 2 "SensaiLib:Jack stereo tayda" H 8650 1850 50  0001 C CNN
+F 2 "SensaiLib:Jack stereo tayda no extra holes" H 8650 1850 50  0001 C CNN
 F 3 "~" H 8650 1850 50  0001 C CNN
 	1    8650 1850
 	-1   0    0    1   

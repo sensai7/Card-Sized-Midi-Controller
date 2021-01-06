@@ -27,17 +27,21 @@ int potPort[SIX] = {POT0,POT1,POT2,POT3,POT4,POT5};
 int currentMedian[SIX] = {0,0,0,0,0,0};
 int previousMedian[SIX] = {0,0,0,0,0,0};
 int sortBuff[BUFFER];
+int extraBuffer =0;
 
 //Leds
 int ledBrightness = 10; //3.9%
 int ledPort[SIX] = {LED0,LED1,LED2,LED3,LED4,LED5};
 int ledStatus[SIX] = {ledBrightness,ledBrightness,ledBrightness,ledBrightness,ledBrightness,ledBrightness};
 
+
+
 //Switches
 int swPort[SIX] = {SW0,SW1,SW2,SW3,SW4,SW5};
 int currentButtonState[SIX] = {0,0,0,0,0,0};
 int previousButtonState[SIX] = {0,0,0,0,0,0};
 int pressedButton[SIX] = {0,0,0,0,0,0};
+int settingFlag; 
 
 //undefined CC banks
 int CC1[SIX] = {0x1A,0x1B,0x1C,0x1D,0x1E,0x1F};
@@ -47,6 +51,19 @@ int CC3[SIX] = {0x72,0x73,0x74,0x75,0x76,0x77};
 //general
 int mode = 0;
 int channel = 0;
+int randomness = 0;
+
+//function prototypes
+void updateLeds(int * leds, int * stat);
+void allLedsOn(int * stat);
+void allLedsOff(int * stat);
+void channel2led(void);
+void updateButtons(int * buttons, int * current, int * previous);
+void pushedButtons(int * buttons, int * current, int * previous);
+int median(int * a,int n);
+void swap(int *p,int *q);
+void copyRow(int *destMatrix, int srcMatrix[][SIX], int ind);
+void midiCCsend(int channel, int cmd, int value);
 
 void setup() {
 	Serial.begin(31250);
@@ -60,10 +77,44 @@ void setup() {
 void loop() {
 	updateButtons(swPort, currentButtonState, previousButtonState);
 	pushedButtons(pressedButton, currentButtonState, previousButtonState);
+	settingFlag = 0;
+	
+	//double button presses
+	// 1+2 LED brightness
+	if(!currentButtonState[0] && !currentButtonState[1]){
+		ledBrightness = map(analogRead(potPort[5]), 0, 1023, 0, 255);
+		allLedsOn(ledStatus);
+		updateLeds(ledPort, ledStatus);  
+		settingFlag = 1;
+	}
+
+	// 2+3 randomness
+	if(!currentButtonState[1] && !currentButtonState[2]){
+		randomness = map(analogRead(potPort[5]), 0, 1023, 0, 127);
+		settingFlag = 1;
+	}
+
+	// 2+3 
+	if(!currentButtonState[2] && !currentButtonState[3]){
+		settingFlag = 1;
+	}
+
+	// 2+3 
+	if(!currentButtonState[3] && !currentButtonState[4]){
+		settingFlag = 1;
+	}
+
+	// 2+3 
+	if(!currentButtonState[4] && !currentButtonState[5]){
+		settingFlag = 1;
+	}
+
+	
+	//single button presses
 	for (int i = 0; i < SIX; i++){
 		if(pressedButton[i]){
 			if(i == mode)
-				channel = (channel+1) % SIX;
+				channel = (channel+1) % 16;
 			else
 				mode = i;
 			switch (mode){
@@ -81,108 +132,64 @@ void loop() {
 				break;
 				case 3:
 				allLedsOff(ledStatus);
-				ledStatus[channel]= ledBrightness;
+				channel2led();
 				updateLeds(ledPort, ledStatus);
 				break;
 				case 4:
 				allLedsOff(ledStatus);
-				ledStatus[channel]= ledBrightness;
+				channel2led();
 				updateLeds(ledPort, ledStatus);
 				break;
 				case 5:
 				allLedsOff(ledStatus);
-				ledStatus[channel]= ledBrightness;
+				channel2led();
 				updateLeds(ledPort, ledStatus);
 				break;
 			}
 		}
 	}
 
-	switch(mode){
-		case 0:
-		for (int i = 0; i < SIX; i++){
-			previousMedian[i] = currentMedian[i];
-			potRead[index][i] = analogRead(potPort[i]);
-			copyRow(sortBuff, potRead, i);
-			currentMedian[i] = map(median(sortBuff, BUFFER), 0, 1023, 0, 127);
-			if (currentMedian[i] != previousMedian[i]){
-				midiCCsend(i, 0x07, currentMedian[i]);
+	//midi operations
+	if(!settingFlag){
+			for (int i = 0; i < SIX; i++){
+				previousMedian[i] = currentMedian[i];
+				potRead[index][i] = analogRead(potPort[i]);
+				copyRow(sortBuff, potRead, i);
+				currentMedian[i] = map(median(sortBuff, BUFFER), 0, 1023, 0, 127);
+				if (currentMedian[i] != previousMedian[i]){
+					int finalValue; 
+					int variation = random(-randomness, randomness);
+					finalValue = currentMedian[i] + variation;
+						if(variation > 0 && finalValue > 127){
+							finalValue = 127;
+						}
+						if(variation < 0 && finalValue < 0){
+							finalValue = 0;
+						}
+					switch (mode){
+						case 0:
+							midiCCsend(i, 0x07, finalValue);
+						break;
+						case 1:
+							midiCCsend(i, 0x0A, finalValue);
+						break;
+						case 2:
+							midiCCsend(i, 0x01, finalValue);
+						break;
+						case 3:
+							midiCCsend(channel, CC1[i], finalValue);
+						break;
+						case 4:
+							midiCCsend(channel, CC2[i], finalValue);
+						break;
+						case 5:
+							midiCCsend(channel, CC3[i], finalValue);
+						break;
+					}
+				}
 			}
-		}
-		index = (index +1) % BUFFER;
-		delay(10);
-		break; 
-
-		case 1: //Pan mode
-		for (int i = 0; i < SIX; i++){
-			previousMedian[i] = currentMedian[i];
-			potRead[index][i] = analogRead(potPort[i]);
-			copyRow(sortBuff, potRead, i);
-			currentMedian[i] = map(median(sortBuff, BUFFER), 0, 1023, 0, 127);
-			if (currentMedian[i] != previousMedian[i]){
-				midiCCsend(i, 0x0A, currentMedian[i]);
-			}
-		}
-		index = (index +1) % BUFFER;
-		delay(10);
-		break; 
-
-		case 2: //Mod mode
-		for (int i = 0; i < SIX; i++){
-			previousMedian[i] = currentMedian[i];
-			potRead[index][i] = analogRead(potPort[i]);
-			copyRow(sortBuff, potRead, i);
-			currentMedian[i] = map(median(sortBuff, BUFFER), 0, 1023, 0, 127);
-			if (currentMedian[i] != previousMedian[i]){
-				midiCCsend(i, 0x01, currentMedian[i]);
-			}
-		}
-		index = (index +1) % BUFFER;
-		delay(10);
-		break;
-
-		case 3: //CC1 mode
-		for (int i = 0; i < SIX; i++){
-			previousMedian[i] = currentMedian[i];
-			potRead[index][i] = analogRead(potPort[i]);
-			copyRow(sortBuff, potRead, i);
-			currentMedian[i] = map(median(sortBuff, BUFFER), 0, 1023, 0, 127);
-			if (currentMedian[i] != previousMedian[i]){
-				midiCCsend(channel, CC1[i], currentMedian[i]);
-			}
-		}
-		index = (index +1) % BUFFER;
-		delay(10);
-
-		break;
-
-		case 4: //CC2 mode
-		for (int i = 0; i < SIX; i++){
-			previousMedian[i] = currentMedian[i];
-			potRead[index][i] = analogRead(potPort[i]);
-			copyRow(sortBuff, potRead, i);
-			currentMedian[i] = map(median(sortBuff, BUFFER), 0, 1023, 0, 127);
-			if (currentMedian[i] != previousMedian[i]){
-				midiCCsend(channel, CC2[i], currentMedian[i]);
-			}
-		}
-		index = (index +1) % BUFFER;
-		delay(10);
-		break;
-
-		case 5: //CC3 mode
-		for (int i = 0; i < SIX; i++){
-			previousMedian[i] = currentMedian[i];
-			potRead[index][i] = analogRead(potPort[i]);
-			copyRow(sortBuff, potRead, i);
-			currentMedian[i] = map(median(sortBuff, BUFFER), 0, 1023, 0, 127);
-			if (currentMedian[i] != previousMedian[i]){
-				midiCCsend(channel, CC3[i], currentMedian[i]);
-			}
-		}
-		index = (index +1) % BUFFER;
-		delay(10);
-		break;
+			index = (index +1) % BUFFER;
+			delay(5);
 	}
 }
 
@@ -208,6 +215,72 @@ void allLedsOff(int * stat){
 	}
 }
 
+
+void channel2led(void){
+	if (channel < 6){
+		ledStatus[channel]= ledBrightness;
+	}	
+	else{
+		switch(channel){
+			case 6:
+				ledStatus[0] = ledBrightness;
+				ledStatus[5] = ledBrightness;
+			break;
+
+			case 7:
+				ledStatus[1] = ledBrightness;
+				ledStatus[5] = ledBrightness;
+			break;
+
+			case 8:
+				ledStatus[2] = ledBrightness;
+				ledStatus[5] = ledBrightness;
+			break;
+
+			case 9:
+				ledStatus[3] = ledBrightness;
+				ledStatus[5] = ledBrightness;
+			break;
+			
+			case 10:
+				ledStatus[4] = ledBrightness;
+				ledStatus[5] = ledBrightness;
+			break;
+
+			case 11:
+				ledStatus[0] = ledBrightness;
+				ledStatus[4] = ledBrightness;
+				ledStatus[5] = ledBrightness;
+			break;
+			
+			case 12:
+				ledStatus[1] = ledBrightness;
+				ledStatus[4] = ledBrightness;
+				ledStatus[5] = ledBrightness;
+			break;
+
+			case 13:
+				ledStatus[2] = ledBrightness;
+				ledStatus[4] = ledBrightness;
+				ledStatus[5] = ledBrightness;
+			break;
+			
+			case 14:
+				ledStatus[3] = ledBrightness;
+				ledStatus[4] = ledBrightness;
+				ledStatus[5] = ledBrightness;
+			break;
+
+			case 15:
+				ledStatus[0] = ledBrightness;		
+				ledStatus[3] = ledBrightness;
+				ledStatus[4] = ledBrightness;
+				ledStatus[5] = ledBrightness;
+			break;
+		}
+	}
+
+}
 
 void updateButtons(int * buttons, int * current, int * previous){
 	for(int i = 0; i < SIX; i++){
