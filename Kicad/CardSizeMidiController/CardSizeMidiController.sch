@@ -1329,4 +1329,264 @@ Wire Wire Line
 Connection ~ 7150 1200
 Wire Wire Line
 	7150 1200 7250 1200
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO1
+U 1 1 5FF78BEE
+P 1950 8800
+F 0 "LOGO1" H 1950 9075 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 1950 8575 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:card sized midi controller logo" H 1950 8800 50  0001 C CNN
+F 3 "~" H 1950 8800 50  0001 C CNN
+	1    1950 8800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO2
+U 1 1 5FF78CD2
+P 1950 9250
+F 0 "LOGO2" H 1950 9525 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 1950 9025 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:ICSP" H 1950 9250 50  0001 C CNN
+F 3 "~" H 1950 9250 50  0001 C CNN
+	1    1950 9250
+	1    0    0    -1  
+$EndComp
+Text Notes 2300 8800 0    50   ~ 0
+logo
+Text Notes 2300 9250 0    50   ~ 0
+icsp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO3
+U 1 1 5FF9830A
+P 1950 9700
+F 0 "LOGO3" H 1950 9975 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 1950 9475 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:midi out" H 1950 9700 50  0001 C CNN
+F 3 "~" H 1950 9700 50  0001 C CNN
+	1    1950 9700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO4
+U 1 1 5FF98310
+P 1950 10150
+F 0 "LOGO4" H 1950 10425 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 1950 9925 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:setting" H 1950 10150 50  0001 C CNN
+F 3 "~" H 1950 10150 50  0001 C CNN
+	1    1950 10150
+	1    0    0    -1  
+$EndComp
+Text Notes 2300 9700 0    50   ~ 0
+midi out
+Text Notes 2300 10150 0    50   ~ 0
+setting
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO5
+U 1 1 5FF9D671
+P 1950 10600
+F 0 "LOGO5" H 1950 10875 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 1950 10375 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:rnd" H 1950 10600 50  0001 C CNN
+F 3 "~" H 1950 10600 50  0001 C CNN
+	1    1950 10600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO6
+U 1 1 5FF9D677
+P 1950 11050
+F 0 "LOGO6" H 1950 11325 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 1950 10825 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:log" H 1950 11050 50  0001 C CNN
+F 3 "~" H 1950 11050 50  0001 C CNN
+	1    1950 11050
+	1    0    0    -1  
+$EndComp
+Text Notes 2300 10600 0    50   ~ 0
+rnd
+Text Notes 2300 11050 0    50   ~ 0
+log
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO7
+U 1 1 5FFA7F67
+P 1950 11500
+F 0 "LOGO7" H 1950 11775 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 1950 11275 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:led" H 1950 11500 50  0001 C CNN
+F 3 "~" H 1950 11500 50  0001 C CNN
+	1    1950 11500
+	1    0    0    -1  
+$EndComp
+Text Notes 2300 11500 0    50   ~ 0
+led\n
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO8
+U 1 1 5FFAD36D
+P 3000 8800
+F 0 "LOGO8" H 3000 9075 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 3000 8575 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:1" H 3000 9094 50  0001 C CNN
+F 3 "~" H 3000 8800 50  0001 C CNN
+	1    3000 8800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO9
+U 1 1 5FFAD373
+P 3000 9250
+F 0 "LOGO9" H 3000 9525 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 3000 9025 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:2" H 3000 9250 50  0001 C CNN
+F 3 "~" H 3000 9250 50  0001 C CNN
+	1    3000 9250
+	1    0    0    -1  
+$EndComp
+Text Notes 3350 8800 0    50   ~ 0
+1
+Text Notes 3350 9250 0    50   ~ 0
+2
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO10
+U 1 1 5FFAD37B
+P 3000 9700
+F 0 "LOGO10" H 3000 9975 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 3000 9475 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:3" H 3000 9700 50  0001 C CNN
+F 3 "~" H 3000 9700 50  0001 C CNN
+	1    3000 9700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO11
+U 1 1 5FFAD381
+P 3000 10150
+F 0 "LOGO11" H 3000 10425 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 3000 9925 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:4" H 3000 10150 50  0001 C CNN
+F 3 "~" H 3000 10150 50  0001 C CNN
+	1    3000 10150
+	1    0    0    -1  
+$EndComp
+Text Notes 3350 9700 0    50   ~ 0
+3
+Text Notes 3350 10150 0    50   ~ 0
+4
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO12
+U 1 1 5FFAD389
+P 3000 10600
+F 0 "LOGO12" H 3000 10875 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 3000 10375 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:5" H 3000 10600 50  0001 C CNN
+F 3 "~" H 3000 10600 50  0001 C CNN
+	1    3000 10600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO13
+U 1 1 5FFAD38F
+P 3000 11050
+F 0 "LOGO13" H 3000 11325 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 3000 10825 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:6" H 3000 11050 50  0001 C CNN
+F 3 "~" H 3000 11050 50  0001 C CNN
+	1    3000 11050
+	1    0    0    -1  
+$EndComp
+Text Notes 3350 10600 0    50   ~ 0
+5
+Text Notes 3350 11050 0    50   ~ 0
+6
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO14
+U 1 1 5FFAD397
+P 3000 11500
+F 0 "LOGO14" H 3000 11775 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 3000 11275 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:1" H 3000 11500 50  0001 C CNN
+F 3 "~" H 3000 11500 50  0001 C CNN
+	1    3000 11500
+	1    0    0    -1  
+$EndComp
+Text Notes 3350 11500 0    50   ~ 0
+1
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO15
+U 1 1 5FFB298F
+P 4000 8800
+F 0 "LOGO15" H 4000 9075 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 4000 8575 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:level" H 4000 8800 50  0001 C CNN
+F 3 "~" H 4000 8800 50  0001 C CNN
+	1    4000 8800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO16
+U 1 1 5FFB2995
+P 4000 9250
+F 0 "LOGO16" H 4000 9525 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 4000 9025 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:pan" H 4000 9250 50  0001 C CNN
+F 3 "~" H 4000 9250 50  0001 C CNN
+	1    4000 9250
+	1    0    0    -1  
+$EndComp
+Text Notes 4350 8800 0    50   ~ 0
+level
+Text Notes 4350 9250 0    50   ~ 0
+pan
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO17
+U 1 1 5FFB299D
+P 4000 9700
+F 0 "LOGO17" H 4000 9975 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 4000 9475 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:mod" H 4000 9700 50  0001 C CNN
+F 3 "~" H 4000 9700 50  0001 C CNN
+	1    4000 9700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO18
+U 1 1 5FFB29A3
+P 4000 10150
+F 0 "LOGO18" H 4000 10425 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 4000 9925 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:cc1" H 4000 10150 50  0001 C CNN
+F 3 "~" H 4000 10150 50  0001 C CNN
+	1    4000 10150
+	1    0    0    -1  
+$EndComp
+Text Notes 4350 9700 0    50   ~ 0
+mod
+Text Notes 4350 10150 0    50   ~ 0
+cc1
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO19
+U 1 1 5FFB29AB
+P 4000 10600
+F 0 "LOGO19" H 4000 10875 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 4000 10375 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:cc2" H 4000 10600 50  0001 C CNN
+F 3 "~" H 4000 10600 50  0001 C CNN
+	1    4000 10600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO20
+U 1 1 5FFB29B1
+P 4000 11050
+F 0 "LOGO20" H 4000 11325 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 4000 10825 50  0001 C CNN
+F 2 "Card sized midi controller Silckscreen:cc3" H 4000 11050 50  0001 C CNN
+F 3 "~" H 4000 11050 50  0001 C CNN
+	1    4000 11050
+	1    0    0    -1  
+$EndComp
+Text Notes 4350 10600 0    50   ~ 0
+cc2
+Text Notes 4350 11050 0    50   ~ 0
+cc3
 $EndSCHEMATC
