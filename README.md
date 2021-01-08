@@ -1,7 +1,7 @@
 # Card Size Midi Controller
  Standard card sized MIDI controller, for level, pan, modulation wheel and control changes. Both hardware and software are open source, you can modify and use as you please.
 
-![Board](https://i.imgur.com/lAB1ZPd.png)
+![Board](https://i.imgur.com/gy8SUvb.png)
 
 ## Ordering your own board
 This repository includes the necessary files to order your own board with the SMT components pre-soldered from JLCPCB's assembly service. To do so, follow this: 
@@ -45,4 +45,11 @@ Each button selects a different mode. The turned on LEDs signal the active midi 
  * When CC1 mode is activated, each potentiometer change a different unassigned CC value (0x66,0x67,0x68,0x69,0x70,0x71) in the active channel. 
  * When CC1 mode is activated, each potentiometer change a different unassigned CC value (0x72,0x73,0x74,0x75,0x76,0x77) in the active channel. 
 
-In the CC modes the midi channel can be changed from 1 to 6 pressing multiple times the same button.
+In the CC modes the midi channel can be changed from 1 to 16 pressing multiple times the same button. The LEDs light up accordingly.
+
+There are currently three double-button press settings:
+
+ * Holding down buttons 1 and 2 makes the rightmost potentiometer control the value randomness from 0 (not randomness) to 127 (any value possible).
+ * Holding down buttons 3 and 4 makes the rightmost potentiometer change the curve for all the MIDI messages from linear to logarithmic.
+ * Holding down buttons 5 and 6 makes the rightmost potentiometer control the LED brightness.
+
