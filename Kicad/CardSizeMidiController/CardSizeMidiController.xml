@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>D:\Code Projects\Card Size Midi Controller\Card-Size-Midi-Controller\Kicad\CardSizeMidiController\CardSizeMidiController.sch</source>
-    <date>21/12/2020 00:07:51</date>
+    <date>29/01/2021 23:04:00</date>
     <tool>Eeschema (5.0.2)-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -343,17 +343,23 @@
       <tstamp>5FCBCEB8</tstamp>
     </comp>
     <comp ref="C1">
-      <value>2.2u</value>
-      <footprint>Capacitor_THT:CP_Radial_D5.0mm_P2.50mm</footprint>
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="LCSC">C49678</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5FCCE732</tstamp>
     </comp>
     <comp ref="C2">
-      <value>100u</value>
-      <footprint>Capacitor_THT:CP_Radial_D6.3mm_P2.50mm</footprint>
+      <value>10u</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="LCSC">C15850</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5FCD21FF</tstamp>
@@ -392,11 +398,171 @@
     </comp>
     <comp ref="J4">
       <value>AudioJack3</value>
-      <footprint>SensaiLib:Jack stereo tayda</footprint>
+      <footprint>SensaiLib:Jack stereo tayda no extra holes</footprint>
       <datasheet>~</datasheet>
       <libsource lib="Connector" part="AudioJack3" description="Audio Jack, 3 Poles (Stereo / TRS)"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5FDEC454</tstamp>
+    </comp>
+    <comp ref="LOGO1">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:card sized midi controller logo</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FF78BEE</tstamp>
+    </comp>
+    <comp ref="LOGO2">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:ICSP</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FF78CD2</tstamp>
+    </comp>
+    <comp ref="LOGO3">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:midi out</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FF9830A</tstamp>
+    </comp>
+    <comp ref="LOGO4">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:setting</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FF98310</tstamp>
+    </comp>
+    <comp ref="LOGO5">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:rnd</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FF9D671</tstamp>
+    </comp>
+    <comp ref="LOGO6">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:log</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FF9D677</tstamp>
+    </comp>
+    <comp ref="LOGO7">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:led</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFA7F67</tstamp>
+    </comp>
+    <comp ref="LOGO8">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:1</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFAD36D</tstamp>
+    </comp>
+    <comp ref="LOGO9">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:2</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFAD373</tstamp>
+    </comp>
+    <comp ref="LOGO10">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFAD37B</tstamp>
+    </comp>
+    <comp ref="LOGO11">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:4</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFAD381</tstamp>
+    </comp>
+    <comp ref="LOGO12">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:5</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFAD389</tstamp>
+    </comp>
+    <comp ref="LOGO13">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:6</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFAD38F</tstamp>
+    </comp>
+    <comp ref="LOGO14">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:1</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFAD397</tstamp>
+    </comp>
+    <comp ref="LOGO15">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:level</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFB298F</tstamp>
+    </comp>
+    <comp ref="LOGO16">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:pan</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFB2995</tstamp>
+    </comp>
+    <comp ref="LOGO17">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:mod</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFB299D</tstamp>
+    </comp>
+    <comp ref="LOGO18">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:cc1</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFB29A3</tstamp>
+    </comp>
+    <comp ref="LOGO19">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:cc2</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFB29AB</tstamp>
+    </comp>
+    <comp ref="LOGO20">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>Card sized midi controller Silckscreen:cc3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FFB29B1</tstamp>
     </comp>
   </components>
   <libparts>
@@ -565,6 +731,14 @@
         <pin num="2" name="~" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="Graphic" part="Logo_Open_Hardware_Small">
+      <description>Open Hardware logo, small</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">#LOGO</field>
+        <field name="Value">Logo_Open_Hardware_Small</field>
+      </fields>
+    </libpart>
     <libpart lib="MCU_Microchip_ATmega" part="ATmega48PV-10AU">
       <aliases>
         <alias>ATmega48P-20AU</alias>
@@ -647,6 +821,9 @@
     </library>
     <library logical="Device">
       <uri>D:\Program Files\KiCad\share\kicad\library/Device.lib</uri>
+    </library>
+    <library logical="Graphic">
+      <uri>D:\Program Files\KiCad\share\kicad\library/Graphic.lib</uri>
     </library>
     <library logical="MCU_Microchip_ATmega">
       <uri>D:\Program Files\KiCad\share\kicad\library/MCU_Microchip_ATmega.lib</uri>

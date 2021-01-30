@@ -196,14 +196,14 @@ void updateLeds(int * leds, int * stat){
 }
 
 void allLedsOn(int * stat){
-		int i;
+	int i;
 	for(i = 0; i < SIX; i++){
 		stat[i] = ledBrightness;
 	}
 }
 
 void allLedsOff(int * stat){
-		int i;
+	int i;
 	for(i = 0; i < SIX; i++){
 		stat[i] = 0;
 	}

@@ -1,4 +1,6 @@
 Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+C1,100n,0805,37,-12,90,top
+C2,10u,0805,30,-8,45,top
 C3,22p,0603,28.0507,-6.3663,45,top
 C4,22p,0603,24.13,-2.54,225,top
 D0,LED,0805,7.62,-23.495,0,top
