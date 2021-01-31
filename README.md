@@ -1,7 +1,7 @@
 # Card Size Midi Controller
  Standard card sized MIDI controller, for level, pan, modulation wheel and control changes. Both hardware and software are open source, you can modify and use as you please.
 
-![Board](https://i.imgur.com/gy8SUvb.png)
+![Board](https://i.imgur.com/5F0pWWH.png)
 
 ## Ordering your own board
 This repository includes the necessary files to order your own board with the SMT components pre-soldered from JLCPCB's assembly service. To do so, follow this: 
@@ -53,3 +53,4 @@ There are currently three double-button press settings:
  * Holding down buttons 3 and 4 makes the rightmost potentiometer change the curve for all the MIDI messages from linear to logarithmic.
  * Holding down buttons 5 and 6 makes the rightmost potentiometer control the LED brightness.
 
+Hold down a switch while powering up to select a different CC preset (1~6). Different presets can be flashed via code to accomodate to the CC received by any synthesizer or audio device. Not pressing any switch during boot will result in the default CC preset, which uses the forementioned undefined CC values.
