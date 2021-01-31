@@ -14,8 +14,6 @@ This repository includes the necessary files to order your own board with the SM
 
 (!) each part links to the particular component in Tayda, but can be sourced from anywhere else. Aliexpress and eBay are worth looking for everything, but I'd suggest using tayda's metal potentiometers.
 
- * C1 10u [Tayda](https://www.taydaelectronics.com/capacitors/electrolytic-capacitors/10uf-16v-85c-radial-electrolytic-capacitor.html)
- * C2 100u [Tayda](https://www.taydaelectronics.com/capacitors/)electrolytic-capacitors/100uf-35v-105c-jrb-radial-electrolytic-capacitor-6x12mm.html)
  * J1 USB B female connector [Tayda](https://www.taydaelectronics.com/usb-type-b-female-connector-dip.html)
  * J2 2x3 2.54mm dupont header [Tayda](https://www.taydaelectronics.com/2x8-pin-2-54-mm-double-row-pin-header-strip.html)
  * J3 OR J4 Din-5 midi connector or stereo jack. You can techniaclly have both in the same PCB, DIN-5 on top and Jack on bottom [Tayda](https://www.taydaelectronics.com/5-pin-midi-connector-female-right-angle.html) or [Tayda](https://www.taydaelectronics.com/3-5mm-stereo-enclosed-socket-chassis-jack.html)
