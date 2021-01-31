@@ -49,16 +49,31 @@ int currentButtonState[SIX] = {0, 0, 0, 0, 0, 0};
 int previousButtonState[SIX] = {0, 0, 0, 0, 0, 0};
 int pressedButton[SIX] = {0, 0, 0, 0, 0, 0};
 
-//undefined CC banks
-int CC1[SIX] = {0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F};
-int CC2[SIX] = {0x66, 0x67, 0x68, 0x69, 0x70, 0x71};
-int CC3[SIX] = {0x72, 0x73, 0x74, 0x75, 0x76, 0x77};
+//CC banks
+int * CC1;
+int * CC2;
+int * CC3;
+
+//Undefined CC
+int undefinedCC1[SIX] = {0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F};
+int undefinedCC2[SIX] = {0x66, 0x67, 0x68, 0x69, 0x70, 0x71};
+int undefinedCC3[SIX] = {0x72, 0x73, 0x74, 0x75, 0x76, 0x77};
+
+//dummy CC
+int preset1CC1[SIX] = {0x69, 0x69, 0x69, 0x69, 0x69, 0x69};
+int preset1CC2[SIX] = {0x69, 0x69, 0x69, 0x69, 0x69, 0x69};
+int preset1CC3[SIX] = {0x69, 0x69, 0x69, 0x69, 0x69, 0x69};
+
+int preset2CC1[SIX] = {0x70, 0x70, 0x70, 0x70, 0x70, 0x70};
+int preset2CC2[SIX] = {0x70, 0x70, 0x70, 0x70, 0x70, 0x70};
+int preset2CC3[SIX] = {0x70, 0x70, 0x70, 0x70, 0x70, 0x70};
 
 //general
 int mode = -1;
 int channel = 0;
 int randomness = 0;
 int logness = 0;
+int preset = 0;
 
 //function prototypes
 void updateLeds(int * leds, int * stat);
@@ -71,14 +86,54 @@ int median(int * a,int n);
 void swap(int *p,int *q);
 void copyRow(int *destMatrix, int srcMatrix[][SIX], int ind);
 void midiCCsend(int channel, int cmd, int value);
+void flash(int led, int brightness, int mill, int times);
 
 void setup() {
+	delay(1000);
 	Serial.begin(31250);
 	for(int i = 0; i < SIX; i++){
 		pinMode(swPort[i], INPUT_PULLUP);
 		pinMode(ledPort[i], OUTPUT);
 	}
-	updateLeds(ledPort, ledStatus);  
+	updateLeds(ledPort, ledStatus); 
+
+	//preset detect TODO: change to multi dimensional matrix
+	updateButtons(swPort, currentButtonState, previousButtonState);
+	for(int i = 0; i < SIX; i++){
+		if(!currentButtonState[i]){
+			preset = i + 1;
+		}
+	} 
+	
+	switch (preset){
+		case 1:
+			CC1 = preset1CC1;
+			CC2 = preset1CC2;
+			CC3 = preset1CC3;
+		break;
+		case 2:
+			CC1 = preset2CC1;
+			CC2 = preset2CC2;
+			CC3 = preset2CC3;
+		break;
+		case 3:
+		break;
+		case 4:
+		break;
+		case 5:
+		break;
+		case 6:
+		break;
+		default:
+			CC1 = undefinedCC1;
+			CC2 = undefinedCC2;
+			CC2 = undefinedCC3;
+		break;
+	}
+	if (preset >= 1){
+		flash(ledPort[preset-1], ledBrightness, 100, 5);
+	}
+
 }
 
 void loop() {
@@ -317,3 +372,14 @@ void midiCCsend(int channel, int cmd, int value) {
 	Serial.write(cmd);
 	Serial.write(value);
 }
+
+void flash(int led, int brightness, int mill, int times){
+	for (int ind = 0; ind < times; ind++){
+		analogWrite(led, brightness);
+		delay(mill);
+		digitalWrite(led, 0);
+		delay(mill);	
+	}
+}
+	
+	
