@@ -60,8 +60,8 @@ int undefinedCC2[SIX] = {0x66, 0x67, 0x68, 0x69, 0x70, 0x71};
 int undefinedCC3[SIX] = {0x72, 0x73, 0x74, 0x75, 0x76, 0x77};
 
 //preset CC
-int volcaFMCC1[SIX] = {40, 41, 42, 43, 44, 45};
-int volcaFMCC2[SIX] = {46, 47, 48, 49, 50, 0x01};
+int volcaFMCC1[SIX] = {40, 41, 42, 43, 44, 45}; //TRANSPOSE, VELOCITY, MODULATOR ATTACK, MODLULATOR DECAY, CARRIER ATTACK, CARRIER DECAY
+int volcaFMCC2[SIX] = {46, 47, 48, 49, 50, 0x01}; //LFO RATE, LFO PICTH DEPTH, ALGORITHM, ARP TYPE, ARP DIV
 int volcaFMCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
 
 //general
