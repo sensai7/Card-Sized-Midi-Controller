@@ -64,6 +64,10 @@ int volcaFMCC1[SIX] = {40, 41, 42, 43, 44, 45}; //TRANSPOSE, VELOCITY, MODULATOR
 int volcaFMCC2[SIX] = {46, 47, 48, 49, 50, 0x01}; //LFO RATE, LFO PICTH DEPTH, ALGORITHM, ARP TYPE, ARP DIV
 int volcaFMCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
 
+int volcaKeysCC1[SIX] = {5, 11, 40, 41, 42, 43}; //PORTAMENTO, EXPRESSION, VOICE, OCTAVE, DETUNE, VCO EG INT
+int volcaKeysCC2[SIX] = {44, 45, 46, 47, 48, 49}; //CUTOFF, VCF EG INT, LFO RATE, LFO PITCH, LFO CUTOFF INT, EG ATTACK
+int volcaKeysCC3[SIX] = {50, 51, 52, 53, 0x01, 0x01}; //EG DECAY/RELEASE, EG SUSTAIN, DELAY TIME, DELAY FEEDBACK
+
 //general
 int mode = -1;
 int channel = 0;
@@ -105,9 +109,12 @@ void setup() {
 		case 1:
 			CC1 = volcaFMCC1;
 			CC2 = volcaFMCC2;
-			CC3 = volcaFMCC2;
+			CC3 = volcaFMCC3;
 		break;
 		case 2:
+			CC1 = volcaKeysCC1;
+			CC2 = volcaKeysCC2;
+			CC3 = volcaKeysCC3;
 		break;
 		case 3:
 		break;
