@@ -80,6 +80,11 @@ int volcaKickCC1[SIX] = {40, 41, 42, 43, 44, 45}; //PULSE COLOUR, PULSE LEVEL, A
 int volcaKickCC2[SIX] = {46, 47, 48, 49, 0x01, 0x01}; //RESONATOR PITCH, RESONATOR BEND, RESONATOR TIME, ACCENT
 int volcaKickCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
 
+int volcaSampleCC1[SIX] = {40, 41, 42, 43, 44, 45}; //SAMPLE START POINT, SAMPLE LENGTH, HI CUT, SPEED, PITCH EG INT, PITCH EG ATTACK
+int volcaSampleCC2[SIX] = {46, 47, 48, 0x01, 0x01, 0x01}; //PITCH EG DECAY, AMP EG ATTACK, AMP EG DECAY
+int volcaSampleCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
+
+
 //general
 int mode = -1;
 int channel = 0;
@@ -144,6 +149,9 @@ void setup() {
 			CC3 = volcaKickCC3;
 		break;
 		case 6:
+			CC1 = volcaSampleCC1;
+			CC2 = volcaSampleCC2;
+			CC3 = volcaSampleCC3;
 		break;
 		default:
 			CC1 = undefinedCC1;
