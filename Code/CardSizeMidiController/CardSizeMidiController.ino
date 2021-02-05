@@ -76,6 +76,10 @@ int volcaNubassCC1[SIX] = {40, 41, 42, 43, 44, 45}; //VTO PITCH, VTO SATURATION,
 int volcaNubassCC2[SIX] = {46, 47, 48, 49, 50, 0x01}; //VCF DECAY, VCF EG INT, ACCENT, LFO RATE, LFO INT
 int volcaNubassCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
 
+int volcaKickCC1[SIX] = {40, 41, 42, 43, 44, 45}; //PULSE COLOUR, PULSE LEVEL, AMP ATTACK, AMP DECAY, DRIVE, TONE
+int volcaKickCC2[SIX] = {46, 47, 48, 49, 0x01, 0x01}; //RESONATOR PITCH, RESONATOR BEND, RESONATOR TIME, ACCENT
+int volcaKickCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
+
 //general
 int mode = -1;
 int channel = 0;
@@ -135,6 +139,9 @@ void setup() {
 			CC3 = volcaNubassCC3;
 		break;
 		case 5:
+			CC1 = volcaKickCC1;
+			CC2 = volcaKickCC2;
+			CC3 = volcaKickCC3;
 		break;
 		case 6:
 		break;
