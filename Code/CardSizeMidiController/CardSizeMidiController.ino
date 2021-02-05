@@ -68,6 +68,10 @@ int volcaKeysCC1[SIX] = {5, 11, 40, 41, 42, 43}; //PORTAMENTO, EXPRESSION, VOICE
 int volcaKeysCC2[SIX] = {44, 45, 46, 47, 48, 49}; //CUTOFF, VCF EG INT, LFO RATE, LFO PITCH, LFO CUTOFF INT, EG ATTACK
 int volcaKeysCC3[SIX] = {50, 51, 52, 53, 0x01, 0x01}; //EG DECAY/RELEASE, EG SUSTAIN, DELAY TIME, DELAY FEEDBACK
 
+int volcaBassCC1[SIX] = {5, 11, 40, 41, 42, 43}; //SLIDE TIME, EXPRESSION, OCTAVE, LFO RATE, LFO INT, VCO PITCH 1
+int volcaBassCC2[SIX] = {44, 45, 46, 47, 48, 49}; //VCO PITCH 2, VCO PITCH 3, EG ATTACK, EG DECAY/RELEASE, CUTOFF EG INT, GATE TIME
+int volcaKBassCC3[SIX] = {50, 51, 52, 53, 0x01, 0x01};
+
 //general
 int mode = -1;
 int channel = 0;
@@ -117,6 +121,9 @@ void setup() {
 			CC3 = volcaKeysCC3;
 		break;
 		case 3:
+			CC1 = volcaBassCC1;
+			CC2 = volcaBassCC2;
+			CC3 = volcaBassCC3;
 		break;
 		case 4:
 		break;
