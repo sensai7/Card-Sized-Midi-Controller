@@ -105,8 +105,10 @@ void copyRow(int *destMatrix, int srcMatrix[][SIX], int ind);
 void midiCCsend(int channel, int cmd, int value);
 void flash(int led, int brightness, int mill, int times);
 
-//TODO I'll add the current pull request and then move onto the 36cc idea
-//also the 7-12 channels for level/pan/mod
+//TODO 36cc for presets
+//TODO glide
+//TODO snap to value or not
+//TODO channels 13-16 for level, pan and mod
 
 void setup() {
 	delay(1000);
