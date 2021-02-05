@@ -72,6 +72,10 @@ int volcaBassCC1[SIX] = {5, 11, 40, 41, 42, 43}; //SLIDE TIME, EXPRESSION, OCTAV
 int volcaBassCC2[SIX] = {44, 45, 46, 47, 48, 49}; //VCO PITCH 2, VCO PITCH 3, EG ATTACK, EG DECAY/RELEASE, CUTOFF EG INT, GATE TIME
 int volcaBassCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
 
+int volcaNubassCC1[SIX] = {40, 41, 42, 43, 44, 45}; //VTO PITCH, VTO SATURATION, VTO LEVEL, VCF CUTOFF, VCF PEAK, VCF ATTACK
+int volcaNubassCC2[SIX] = {46, 47, 48, 49, 50, 0x01}; //VCF DECAY, VCF EG INT, ACCENT, LFO RATE, LFO INT
+int volcaNubassCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
+
 //general
 int mode = -1;
 int channel = 0;
@@ -126,6 +130,9 @@ void setup() {
 			CC3 = volcaBassCC3;
 		break;
 		case 4:
+			CC1 = volcaNubassCC1;
+			CC2 = volcaNubassCC2;
+			CC3 = volcaNubassCC3;
 		break;
 		case 5:
 		break;
