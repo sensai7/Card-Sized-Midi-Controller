@@ -60,9 +60,30 @@ int undefinedCC2[SIX] = {0x66, 0x67, 0x68, 0x69, 0x70, 0x71};
 int undefinedCC3[SIX] = {0x72, 0x73, 0x74, 0x75, 0x76, 0x77};
 
 //preset CC
-int volcaFMCC1[SIX] = {40, 41, 42, 43, 44, 45};
-int volcaFMCC2[SIX] = {46, 47, 48, 49, 50, 0x01};
+int volcaFMCC1[SIX] = {40, 41, 42, 43, 44, 45}; //TRANSPOSE, VELOCITY, MODULATOR ATTACK, MODLULATOR DECAY, CARRIER ATTACK, CARRIER DECAY
+int volcaFMCC2[SIX] = {46, 47, 48, 49, 50, 0x01}; //LFO RATE, LFO PICTH DEPTH, ALGORITHM, ARP TYPE, ARP DIV
 int volcaFMCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
+
+int volcaKeysCC1[SIX] = {5, 11, 40, 41, 42, 43}; //PORTAMENTO, EXPRESSION, VOICE, OCTAVE, DETUNE, VCO EG INT
+int volcaKeysCC2[SIX] = {44, 45, 46, 47, 48, 49}; //CUTOFF, VCF EG INT, LFO RATE, LFO PITCH, LFO CUTOFF INT, EG ATTACK
+int volcaKeysCC3[SIX] = {50, 51, 52, 53, 0x01, 0x01}; //EG DECAY/RELEASE, EG SUSTAIN, DELAY TIME, DELAY FEEDBACK
+
+int volcaBassCC1[SIX] = {5, 11, 40, 41, 42, 43}; //SLIDE TIME, EXPRESSION, OCTAVE, LFO RATE, LFO INT, VCO PITCH 1
+int volcaBassCC2[SIX] = {44, 45, 46, 47, 48, 49}; //VCO PITCH 2, VCO PITCH 3, EG ATTACK, EG DECAY/RELEASE, CUTOFF EG INT, GATE TIME
+int volcaBassCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
+
+int volcaNubassCC1[SIX] = {40, 41, 42, 43, 44, 45}; //VTO PITCH, VTO SATURATION, VTO LEVEL, VCF CUTOFF, VCF PEAK, VCF ATTACK
+int volcaNubassCC2[SIX] = {46, 47, 48, 49, 50, 0x01}; //VCF DECAY, VCF EG INT, ACCENT, LFO RATE, LFO INT
+int volcaNubassCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
+
+int volcaKickCC1[SIX] = {40, 41, 42, 43, 44, 45}; //PULSE COLOUR, PULSE LEVEL, AMP ATTACK, AMP DECAY, DRIVE, TONE
+int volcaKickCC2[SIX] = {46, 47, 48, 49, 0x01, 0x01}; //RESONATOR PITCH, RESONATOR BEND, RESONATOR TIME, ACCENT
+int volcaKickCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
+
+int volcaSampleCC1[SIX] = {40, 41, 42, 43, 44, 45}; //SAMPLE START POINT, SAMPLE LENGTH, HI CUT, SPEED, PITCH EG INT, PITCH EG ATTACK
+int volcaSampleCC2[SIX] = {46, 47, 48, 0x01, 0x01, 0x01}; //PITCH EG DECAY, AMP EG ATTACK, AMP EG DECAY
+int volcaSampleCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
+
 
 //general
 int mode = -1;
@@ -105,17 +126,32 @@ void setup() {
 		case 1:
 			CC1 = volcaFMCC1;
 			CC2 = volcaFMCC2;
-			CC3 = volcaFMCC2;
+			CC3 = volcaFMCC3;
 		break;
 		case 2:
+			CC1 = volcaKeysCC1;
+			CC2 = volcaKeysCC2;
+			CC3 = volcaKeysCC3;
 		break;
 		case 3:
+			CC1 = volcaBassCC1;
+			CC2 = volcaBassCC2;
+			CC3 = volcaBassCC3;
 		break;
 		case 4:
+			CC1 = volcaNubassCC1;
+			CC2 = volcaNubassCC2;
+			CC3 = volcaNubassCC3;
 		break;
 		case 5:
+			CC1 = volcaKickCC1;
+			CC2 = volcaKickCC2;
+			CC3 = volcaKickCC3;
 		break;
 		case 6:
+			CC1 = volcaSampleCC1;
+			CC2 = volcaSampleCC2;
+			CC3 = volcaSampleCC3;
 		break;
 		default:
 			CC1 = undefinedCC1;
