@@ -84,13 +84,13 @@ int volcaSampleCC1[SIX] = {40, 41, 42, 43, 44, 45}; //SAMPLE START POINT, SAMPLE
 int volcaSampleCC2[SIX] = {46, 47, 48, 0x01, 0x01, 0x01}; //PITCH EG DECAY, AMP EG ATTACK, AMP EG DECAY
 int volcaSampleCC3[SIX] = {0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
 
-
 //general
 int mode = -1;
 int channel = 0;
 int randomness = 0;
 int logness = 0;
 int preset = 0;
+int secondPage = 0;
 
 //function prototypes
 void updateLeds(int * leds, int * stat);
@@ -104,6 +104,9 @@ void swap(int *p,int *q);
 void copyRow(int *destMatrix, int srcMatrix[][SIX], int ind);
 void midiCCsend(int channel, int cmd, int value);
 void flash(int led, int brightness, int mill, int times);
+
+//TODO I'll add the current pull request and then move onto the 36cc idea
+//also the 7-12 channels for level/pan/mod
 
 void setup() {
 	delay(1000);
@@ -194,20 +197,26 @@ void loop() {
 		for (int i = 0; i < SIX; i++){
 			if(pressedButton[i]){
 				if(i == mode)
-					channel = (channel + 1) % 16;
+					if(mode >= 3 && mode <= 5)
+						channel = (channel + 1) % 16;
+					else
+						secondPage = (!secondPage) * 6;
 				else
 					mode = i;
 				switch (mode){
 					case 0:
 					allLedsOn(ledStatus);
+					ledStatus[secondPage/6] = 0;
 					updateLeds(ledPort, ledStatus);
 					break;
 					case 1:
 					allLedsOn(ledStatus);
+					ledStatus[secondPage/6] = 0;
 					updateLeds(ledPort, ledStatus);
 					break;
 					case 2:
 					allLedsOn(ledStatus);
+					ledStatus[secondPage/6] = 0;
 					updateLeds(ledPort, ledStatus);
 					break;
 					case 3:
@@ -247,13 +256,13 @@ void loop() {
 				}
 				switch (mode){
 					case 0:
-						midiCCsend(i, 0x07, finalValue);
+						midiCCsend(i + secondPage, 0x07, finalValue);
 					break;
 					case 1:
-						midiCCsend(i, 0x0A, finalValue);
+						midiCCsend(i + secondPage, 0x0A, finalValue);
 					break;
 					case 2:
-						midiCCsend(i, 0x01, finalValue);
+						midiCCsend(i + secondPage, 0x01, finalValue);
 					break;
 					case 3:
 						midiCCsend(channel, CC1[i], finalValue);
