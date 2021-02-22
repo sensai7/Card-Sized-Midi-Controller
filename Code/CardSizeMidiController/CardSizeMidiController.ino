@@ -161,7 +161,7 @@ void setup() {
 		default:
 			CC1 = undefinedCC1;
 			CC2 = undefinedCC2;
-			CC2 = undefinedCC3;
+			CC3 = undefinedCC3;
 		break;
 	}
 	if (preset >= 1){
