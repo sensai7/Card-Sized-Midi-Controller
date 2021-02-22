@@ -44,6 +44,7 @@ Each button selects a different mode. The turned on LEDs signal the active midi 
  * When CC1 mode is activated, each potentiometer change a different unassigned CC value (0x72,0x73,0x74,0x75,0x76,0x77) in the active channel. 
 
 In the CC modes the midi channel can be changed from 1 to 16 pressing multiple times the same button. The LEDs light up accordingly.
+In the LEVEL, PAN, and MOD modes, subsequent presses of the mode button will toggle the active MIDI channels from 1-6 to 7-12.
 
 There are currently three double-button press settings:
 
@@ -52,3 +53,13 @@ There are currently three double-button press settings:
  * Holding down buttons 5 and 6 makes the rightmost potentiometer control the LED brightness.
 
 Hold down a switch while powering up to select a different CC preset (1~6). Different presets can be flashed via code to accomodate to the CC received by any synthesizer or audio device. Not pressing any switch during boot will result in the default CC preset, which uses the forementioned undefined CC values.
+
+Default presets:
+
+ 0. (default) Undefined CC. Use this preset to use along MIDI learn in your devices.
+ 1. Korg Volca FM preset
+ 2. Korg Volca Keys preset
+ 3. Korg Volca Bass preset
+ 4. Korg Volca Nubass preset
+ 5. Korg Volca Kick preset
+ 6. Korg Volca Sample preset
