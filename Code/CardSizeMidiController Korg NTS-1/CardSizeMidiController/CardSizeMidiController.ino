@@ -61,7 +61,7 @@ int CC5[SIX] = {89, 30, 31, 33, 1, 1};			//DELAY TYPE, DELAY TIME, DEPTH, MIX
 int CC6[SIX] = {90, 34, 35, 36, 1, 1};			//REVERB TYPE, REVERB TIME, DEPTH, MIX 
 
 //general
-int mode = 1;
+int mode = 0;
 int channel = 0;
 int randomness = 0;
 int logness = 0;
