@@ -55,9 +55,9 @@ int * CC2;
 int * CC3;
 
 //Undefined CC
-int undefinedCC1[SIX] = {0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F};
-int undefinedCC2[SIX] = {0x66, 0x67, 0x68, 0x69, 0x70, 0x71};
-int undefinedCC3[SIX] = {0x72, 0x73, 0x74, 0x75, 0x76, 0x77};
+int undefinedCC1[SIX] = {2, 6, 13, 14, 15, 0x1F};
+int undefinedCC2[SIX] = {7, 4, 5, 0x1F, 0x1F, 0x1F};
+int undefinedCC3[SIX] = {0, 1, 3, 8, 9, 0x1F};
 
 //preset CC
 int volcaFMCC1[SIX] = {40, 41, 42, 43, 44, 45}; //TRANSPOSE, VELOCITY, MODULATOR ATTACK, MODLULATOR DECAY, CARRIER ATTACK, CARRIER DECAY

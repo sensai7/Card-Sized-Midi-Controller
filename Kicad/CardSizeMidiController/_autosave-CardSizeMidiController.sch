@@ -1603,4 +1603,126 @@ Text Notes 4350 10600 0    50   ~ 0
 cc2
 Text Notes 4350 11050 0    50   ~ 0
 cc3
+$Comp
+L Connector:TestPoint TP1
+U 1 1 61423DE5
+P 5350 -700
+F 0 "TP1" H 5408 -582 50  0000 L CNN
+F 1 "TestPoint" H 5408 -673 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 5550 -700 50  0001 C CNN
+F 3 "~" H 5550 -700 50  0001 C CNN
+	1    5350 -700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP4
+U 1 1 614250EF
+P 5900 -700
+F 0 "TP4" H 5958 -582 50  0000 L CNN
+F 1 "TestPoint" H 5958 -673 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 6100 -700 50  0001 C CNN
+F 3 "~" H 6100 -700 50  0001 C CNN
+	1    5900 -700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 6142A8EB
+P 5350 -400
+F 0 "TP2" H 5408 -282 50  0000 L CNN
+F 1 "TestPoint" H 5408 -373 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 5550 -400 50  0001 C CNN
+F 3 "~" H 5550 -400 50  0001 C CNN
+	1    5350 -400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP5
+U 1 1 6143000B
+P 5900 -400
+F 0 "TP5" H 5958 -282 50  0000 L CNN
+F 1 "TestPoint" H 5958 -373 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 6100 -400 50  0001 C CNN
+F 3 "~" H 6100 -400 50  0001 C CNN
+	1    5900 -400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP3
+U 1 1 614355D4
+P 5350 -100
+F 0 "TP3" H 5408 18  50  0000 L CNN
+F 1 "TestPoint" H 5408 -73 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 5550 -100 50  0001 C CNN
+F 3 "~" H 5550 -100 50  0001 C CNN
+	1    5350 -100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP6
+U 1 1 6143AA6F
+P 5900 -100
+F 0 "TP6" H 5958 18  50  0000 L CNN
+F 1 "TestPoint" H 5958 -73 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 6100 -100 50  0001 C CNN
+F 3 "~" H 6100 -100 50  0001 C CNN
+	1    5900 -100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0142
+U 1 1 614401A5
+P 6400 -750
+F 0 "#PWR0142" H 6400 -900 50  0001 C CNN
+F 1 "+5V" H 6415 -577 50  0000 C CNN
+F 2 "" H 6400 -750 50  0001 C CNN
+F 3 "" H 6400 -750 50  0001 C CNN
+	1    6400 -750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 -750 6400 -650
+Wire Wire Line
+	6400 -650 5900 -650
+Wire Wire Line
+	5900 -650 5900 -700
+$Comp
+L power:GND #PWR0143
+U 1 1 6144BBF3
+P 5900 0
+F 0 "#PWR0143" H 5900 -250 50  0001 C CNN
+F 1 "GND" H 5905 -173 50  0000 C CNN
+F 2 "" H 5900 0   50  0001 C CNN
+F 3 "" H 5900 0   50  0001 C CNN
+	1    5900 0   
+	1    0    0    -1  
+$EndComp
+Text GLabel 6350 -350 2    50   Input ~ 0
+MOSI
+Wire Wire Line
+	6350 -350 5900 -350
+Wire Wire Line
+	5900 -350 5900 -400
+Wire Wire Line
+	5900 0    5900 -100
+Text GLabel 4900 -300 0    50   Input ~ 0
+~RST
+Text GLabel 4900 -500 0    50   Input ~ 0
+MISO
+Wire Wire Line
+	4900 -500 5050 -500
+Text GLabel 4900 -400 0    50   Input ~ 0
+SCK
+Wire Wire Line
+	5050 -500 5050 -700
+Wire Wire Line
+	5050 -700 5350 -700
+Wire Wire Line
+	4900 -400 5350 -400
+Wire Wire Line
+	5200 -300 5200 -100
+Wire Wire Line
+	5200 -100 5350 -100
+Wire Wire Line
+	4900 -300 5200 -300
 $EndSCHEMATC
