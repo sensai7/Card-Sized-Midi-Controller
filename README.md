@@ -29,9 +29,10 @@ To burn the firmware you'll need an Arduino Uno board or any Arduino that can be
  2. Unplug the Arduino, connect the ICSP header from the Arduino to the ICSP header of your MIDI controller board, EXCEPT the RST pin from the MIDI controller (third row, first column), which should be connected to the arduino board pin 10.
 
  ![icsp](https://i.imgur.com/4j5v6kI.png)
-
- 3. Select the appropiate board/port in the Arduino IDE and go to tools > Burn bootloader. This bootloader will be overwritten in a second, but burning it now will activate some useful fuses inside the microcontroller, particularly the one selecting an external crystal oscillator. This needs to be done only once per chip.
- 4. Open the firmware script "\Code\CardSizeMidiController\CardSizeMidiController.ino" or any custom script in the Arduino IDE and holding shift press the upload button, or select Sketch > Upload using uploader. After a few seconds of LED flashing the chip should have the firmware ready.
+ 
+ 3. In tools > Programmer be sure "Arduino as ISP" is selected with a check mark, or otherwhise the following actions will be executed in the Arduino board instead of the target board.
+ 4. Select the appropiate board/port in the Arduino IDE and go to tools > Burn bootloader. This bootloader will be overwritten in a second, but burning it now will activate some useful fuses inside the microcontroller, particularly the one selecting an external crystal oscillator. This needs to be done only once per chip.
+ 5. Open the firmware script "\Code\CardSizeMidiController\CardSizeMidiController.ino" or any custom script in the Arduino IDE and holding shift press the upload button, or select Sketch > Upload using uploader. After a few seconds of LED flashing the chip should have the firmware ready.
 
 ## How to use ()
 Each button selects a different mode. The turned on LEDs signal the active midi channels.
