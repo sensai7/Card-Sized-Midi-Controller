@@ -21,11 +21,13 @@ private:
 
 public:
   PushButton(uint8_t pin);
-  bool isPressed();    // Check if the button is pressed
+  bool wasJustPressed();    // Check if the button was pressed right now
+  bool wasJustReleased();
+  bool isPressed();
   bool isReleased();   // Check if the button is released
   bool instantRead();  // No debounce
   bool read();         // Read the current state of the button with debounce
-  bool wasJustPressed();   // Detect when button transitions from not pressed to pressed
+
 };
 
 #endif

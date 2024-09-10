@@ -15,10 +15,18 @@ bool PushButton::instantRead(){
 }
 
 bool PushButton::isPressed() {
-  return (instantRead() == LOW && lastButtonState == HIGH);
+  return (digitalRead(pin) == LOW);
 }
 
 bool PushButton::isReleased() {
+  return (digitalRead(pin) == HIGH);
+}
+
+bool PushButton::wasJustPressed() {
+  return (instantRead() == LOW && lastButtonState == HIGH);
+}
+
+bool PushButton::wasJustReleased() {
   return (instantRead() == HIGH && lastButtonState == LOW);
 }
 

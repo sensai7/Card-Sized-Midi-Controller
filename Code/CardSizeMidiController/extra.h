@@ -54,10 +54,12 @@ extern uint8_t volcaSampleCC3[];
 
 void initSequence(const Led* ledsInner);
 void updateAllPots(Potentiometer* potsInner, uint8_t* avgValues);
-void ledUpdate(const uint8_t channel, const uint8_t mode, Led* ledsInner, const Potentiometer* potsInner);
+void ledUpdate(const uint8_t channel, const uint8_t mode, Led* ledsInner, const Potentiometer* potsInner, const uint8_t setBrightness);
 void selectPreset(uint8_t* CC1Inner, uint8_t* CC2Inner, uint8_t* CC3Inner, Led* ledsInner, PushButton * buttonsInner);
 void defaultBrightness(Led* ledsInner, const uint8_t except);
 uint8_t getFinalValue(const uint8_t initialValue, const uint8_t* logValues, const int8_t randomness, const uint8_t logness);
 uint8_t nextChannel(const uint8_t channel);
+void ledMeter(Led * leds, const uint8_t meter, uint8_t brightness);
+void mapCC(uint8_t* CCMap, const uint8_t ccCode);
 
 #endif

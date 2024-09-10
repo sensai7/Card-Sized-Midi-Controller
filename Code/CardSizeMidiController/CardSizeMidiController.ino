@@ -11,8 +11,10 @@ uint8_t mode;
 uint8_t channel;
 int8_t randomness;
 uint8_t logness;
+uint8_t setBrightness = DEFAULT_BRIGHTNESS;
 
 //CC banks
+uint8_t* CCMap;  //the current mode cc codes
 uint8_t* CC1;
 uint8_t* CC2;
 uint8_t* CC3;
@@ -47,76 +49,87 @@ void setup() {
   selectPreset(CC1, CC2, CC3, leds, buttons);
   mode = MODE_LEVEL;
   channel = START_CHANNEL;
+  mapCC(CCMap, MIDI_CC_LEVEL);
 }
 
 void loop() {
-  // todo double switch presses
-	// 1+2 Randomness
-	// if(!currentButtonState[0] && !currentButtonState[1]){
-	// 	randomness = map(analogRead(potPort[5]), 0, 1023, 0, 127);
-	// }
-	// // 3+4 Logness
-	// if(!currentButtonState[2] && !currentButtonState[3]){
-	// 	logness = map(analogRead(potPort[5]), 0, 1023, 0, 255);
-	// }
+  // double switch presses
+  bool doublePressMode = false;
+  // 1+2 Randomness
+  if (button0.isPressed() && button1.isPressed()) {
+    doublePressMode = true;
+    pot5.update();
+    randomness = pot5.getCurrentAverage();
+    ledMeter(leds, randomness, setBrightness);
+  }
+  // 3+4 Logness
+  if (button2.isPressed() && button3.isPressed()) {
+    doublePressMode = true;
+    pot5.update();
+    logness = pot5.getCurrentAverage();
+    ledMeter(leds, logness, setBrightness);
+  }
+  // 5+6 set brightness
+  if (button4.isPressed() && button5.isPressed()) {
+    doublePressMode = true;
+    pot5.update();
+    setBrightness = pot5.getCurrentAverage();
+    if (setBrightness == 0) setBrightness = 1;
+    ledMeter(leds, setBrightness, setBrightness);
+  }
 
 
-
-  // single switch presses
-  if (button0.isPressed()) {
-    mode = MODE_LEVEL;
-  } else if (button1.isPressed()) {
-    mode = MODE_PAN;
-  } else if (button2.isPressed()) {
-    mode = MODE_WHEEL;
-  } else if (button3.isPressed()) {
-    if (mode == MODE_CC1) {
-      channel = nextChannel(channel);
-    } else {
-      mode = MODE_CC1;
+  if (!doublePressMode) {
+    // single switch presses
+    if (button0.wasJustPressed()) {
+      mode = MODE_LEVEL;
+      mapCC(CCMap, MIDI_CC_LEVEL);
+    } else if (button1.wasJustPressed()) {
+      mode = MODE_PAN;
+      mapCC(CCMap, MIDI_CC_PAN);
+    } else if (button2.wasJustPressed()) {
+      mode = MODE_WHEEL;
+      mapCC(CCMap, MIDI_CC_WHEEL);
+    } else if (button3.wasJustPressed()) {
+      if (mode == MODE_CC1) {
+        channel = nextChannel(channel);
+      } else {
+        mode = MODE_CC1;
+        CCMap = CC1;
+      }
+    } else if (button4.wasJustPressed()) {
+      if (mode == MODE_CC2) {
+        channel = nextChannel(channel);
+      } else {
+        mode = MODE_CC2;
+        CCMap = CC2;
+      }
+    } else if (button5.wasJustPressed()) {
+      if (mode == MODE_CC3) {
+        channel = nextChannel(channel);
+      } else {
+        mode = MODE_CC3;
+        CCMap = CC3;
+      }
     }
-  } else if (button4.isPressed()) {
-    if (mode == MODE_CC2) {
-      channel = nextChannel(channel);
-    } else {
-      mode = MODE_CC2;
+
+    // pots
+    uint8_t avgValues[6];
+    updateAllPots(pots, avgValues);
+
+    // Send midi
+    for (uint8_t i = 0; i < 6; i++) {
+      if (pots[i].previousDifersCurrent()) {
+        uint8_t targetChannel = (mode <= MODE_WHEEL) ? i : channel;
+        midiCCsend(targetChannel, CCMap[i], getFinalValue(avgValues[i], logResponse, randomness, logness));
+      }
     }
-  } else if (button5.isPressed()) {
-    if (mode == MODE_CC3) {
-      channel = nextChannel(channel);
-    } else {
-      mode = MODE_CC3;
-    }
+
+    // leds
+    ledUpdate(channel, mode, leds, pots, setBrightness);
   }
 
-  // pots
-  uint8_t avgValues[6];
-  updateAllPots(pots, avgValues);
-  //todo change send thing depending on mode
 
-  if (pot0.previousDifersCurrent()) {
-    midiCCsend(0, 0x07, getFinalValue(avgValues[0], logResponse, randomness, logness));
-    //todo test this
-    //midiCCsend(0, 0x07, avgValues[0]);
-  }
-  if (pot1.previousDifersCurrent()) {
-    midiCCsend(0, 0x07, avgValues[1]);
-  }
-  if (pot2.previousDifersCurrent()) {
-    midiCCsend(0, 0x07, avgValues[2]);
-  }
-  if (pot3.previousDifersCurrent()) {
-    midiCCsend(0, 0x07, avgValues[3]);
-  }
-  if (pot4.previousDifersCurrent()) {
-    midiCCsend(0, 0x07, avgValues[4]);
-  }
-  if (pot5.previousDifersCurrent()) {
-    midiCCsend(0, 0x07, avgValues[5]);
-  }
-
-  // leds
-  ledUpdate(channel, mode, leds, pots);
 
   // wait
   delay(LOOP_PAUSE_MS);

@@ -93,7 +93,7 @@ void updateAllPots(Potentiometer* potsInner, uint8_t* avgValues) {
   avgValues[5] = potsInner[5].getCurrentAverage();
 }
 
-void ledUpdate(const uint8_t channel, const uint8_t mode, Led* ledsInner, const Potentiometer* potsInner) {
+void ledUpdate(const uint8_t channel, const uint8_t mode, Led* ledsInner, const Potentiometer* potsInner, const uint8_t setBrightness) {
   if (mode <= MODE_WHEEL) {  //modes level/pan/wheel -> lit all leds, brightness to pot position
     for (uint8_t i = 0; i < 6; i++) {
       ledsInner[i].turnOn();
@@ -106,7 +106,7 @@ void ledUpdate(const uint8_t channel, const uint8_t mode, Led* ledsInner, const 
         ledsInner[i].setBrightness(1);
       }
       if (i == channel) {
-        ledsInner[i].setBrightness(DEFAULT_BRIGHTNESS);
+        ledsInner[i].setBrightness(setBrightness);
       }
     }
   }
@@ -172,6 +172,24 @@ uint8_t getFinalValue(const uint8_t initialValue, const uint8_t* logValues, cons
   return finalValue;
 }
 
-uint8_t nextChannel(const uint8_t channel){
+uint8_t nextChannel(const uint8_t channel) {
   return (channel + 1) % 6;
+}
+
+void ledMeter(Led* leds, const uint8_t meter, uint8_t brightness) {
+  uint8_t nLitLeds = map(meter, 0, 127, 0, 5);
+  for (uint8_t i = 0; i < 6; i++) {
+    if (i <= nLitLeds) {
+      leds[i].turnOn();
+      leds[i].setBrightness(brightness);
+    } else {
+      leds[i].turnOff();
+    }
+  }
+}
+
+void mapCC(uint8_t* CCMap, const uint8_t ccCode) {
+  uint8_t newMap[6];
+  for (uint8_t i = 0; i < 6; i++) newMap[i] = ccCode;
+  CCMap = newMap;
 }
