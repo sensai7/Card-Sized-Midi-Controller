@@ -1,0 +1,372 @@
+82360810054700
+w_pht_resistors
+R12x5.2
+Resistor, 12x5.2 mm
+R
+0
+2
+2
+w_pht_resistors
+R12x5.2_vert
+Resistor, 12x5.2 mm, vertical
+R
+0
+2
+2
+w_pht_resistors
+R13.5x6
+Resistor, 13.5x6 mm
+R
+0
+2
+2
+w_pht_resistors
+R13.5x6_vert
+Resistor, 13.5x62 mm, vertical
+R
+0
+2
+2
+w_pht_resistors
+R15.5x6
+Resistor, 15.5x6 mm
+R
+0
+2
+2
+w_pht_resistors
+R15.5x6_vert
+Resistor, 15.5x6 mm, vertical
+R
+0
+2
+2
+w_pht_resistors
+R22x8
+Resistor, 22x8 mm
+R
+0
+2
+2
+w_pht_resistors
+R22x8_vert
+Resistor, 22x8 mm, vertical
+R
+0
+2
+2
+w_pht_resistors
+R25x8
+Resistor, 25x8 mm
+R
+0
+2
+2
+w_pht_resistors
+R25x8_vert
+Resistor, 25x8 mm, vertical
+R
+0
+2
+2
+w_pht_resistors
+RC03
+Resistor, RC03
+R
+0
+2
+2
+w_pht_resistors
+RC05
+Resistor, RC05
+R
+0
+2
+2
+w_pht_resistors
+RC07
+Resistor, RC07
+R
+0
+2
+2
+w_pht_resistors
+r-sil_4
+R-net, sil package, 4pin
+CONN DEV
+0
+4
+4
+w_pht_resistors
+r-sil_5
+R-net, sil package, 5pin
+CONN DEV
+0
+5
+5
+w_pht_resistors
+r-sil_6
+R-net, sil package, 6pin
+CONN DEV
+0
+6
+6
+w_pht_resistors
+r-sil_7
+R-net, sil package, 7pin
+CONN DEV
+0
+7
+7
+w_pht_resistors
+r-sil_8
+R-net, sil package, 8pin
+CONN DEV
+0
+8
+8
+w_pht_resistors
+r-sil_9
+R-net, sil package, 9pin
+CONN DEV
+0
+9
+9
+w_pht_resistors
+r-sil_10
+R-net, sil package, 10pin
+CONN DEV
+0
+10
+10
+w_pht_resistors
+r-sil_11
+R-net, sil package, 11pin
+CONN DEV
+0
+11
+11
+w_pht_resistors
+r-sil_12
+R-net, sil package, 12pin
+CONN DEV
+0
+12
+12
+w_pht_resistors
+r-sil_13
+R-net, sil package, 13pin
+CONN DEV
+0
+13
+13
+w_pht_resistors
+r-sil_14
+R-net, sil package, 14pin
+CONN DEV
+0
+14
+14
+w_pht_resistors
+rc03_vert
+Resistor, RC03 vertical
+
+0
+2
+2
+w_pht_resistors
+rc05_vert
+Resistor, RC05 vertical
+
+0
+2
+2
+w_pht_resistors
+rc07_vert
+Resistor, RC07 vertical
+
+0
+2
+2
+w_pht_resistors
+rc_vert_26x14x10
+ceramic power resistor, vertical, 26,5mm
+
+0
+2
+2
+w_pht_resistors
+trimmer_alps-rk09k1130ah1
+9mm trimmer, Alps RK09K1130AH1
+trimmer
+0
+5
+3
+w_pht_resistors
+trimmer_alps_rk12l12c0-f15-c0
+12mm dual trimmer, Alps RK12L12C0-F15-C0
+trimmer
+0
+8
+6
+w_pht_resistors
+trimmer_alps_rk12l12c0-f20-c0
+12mm dual trimmer, Alps RK12L12C0-F20-C0
+trimmer
+0
+8
+6
+w_pht_resistors
+trimmer_alps_rk12l12c0-f25-c0
+12mm dual trimmer, Alps RK12L12C0-F25-C0
+trimmer
+0
+8
+6
+w_pht_resistors
+trimmer_alps_rk12l12c0-f30-c0
+12mm dual trimmer, Alps RK12L12C0-F30-C0
+trimmer
+0
+8
+6
+w_pht_resistors
+trimmer_bourns_3005
+trimmer, multiturn, bourns 3005
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_bourns_3006p
+trimmer, multiturn, bourns 3006p
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_bourns_3006w
+trimmer, multiturn, bourns 3006w
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_bourns_3006y
+trimmer, multiturn, bourns 3006y
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_bourns_3009p
+trimmer, multiturn, bourns 3009p
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_bourns_3009y
+trimmer, multiturn, bourns 3009y
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_bourns_3250w
+trimmer, multiturn, Bourns 3250W
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_diplohm_p91
+trimmer, multiturn cermet, Diplohmatic P91
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_diplohm_p92
+trimmer, multiturn cermet, Diplohmatic P92
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_diplohm_p94
+trimmer, multiturn cermet, Diplohmatic P94
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_diplohm_p95
+trimmer, multiturn cermet, Diplohmatic P95
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_diplohm_p97
+trimmer, multiturn cermet, Diplohmatic P97
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_ecp_ca9-h2,5
+trimmer, ECP CA9 H2,5
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_ecp_ca9-v10
+trimmer, ECP CA9 V10
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_piher_pt6xh
+trimmer, Piher PT6-xH
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_piher_pt6xv
+trimmer, Piher PT6-xV
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_piher_pt10xv10
+trimmer, Piher PT10-xV10
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_piher_pt15xh05
+trimmer, Piher PT15-xH05
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_piher_pt15xvx2
+trimmer, Piher PT15-xVx2
+trimmer
+0
+3
+3
+w_pht_resistors
+trimmer_vishay_64w
+trimmer, multiturn cermet, Vishay 64W
+trimmer
+0
+3
+3

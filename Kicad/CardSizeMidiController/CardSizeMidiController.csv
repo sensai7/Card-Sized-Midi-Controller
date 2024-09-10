@@ -1,0 +1,14 @@
+Comment,Designator,Footprint,LCSC
+100n Unpolarized capacitor,C1,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,C49678
+10u Unpolarized capacitor,C2,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,C15850
+22p Unpolarized capacitor,"C3,C4",C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,C1653
+LED Light emitting diode,"D0,D1,D2,D3,D4,D5",LED_0805_2012Metric,C34499
+MIDI_OUT 5-pin DIN connector (5-pin DIN-5 stereo),J3,din-5,C2939346
+USB_C_Plug_USB2.0 USB 2.0-only Type-C Plug connector,P1,USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal,C2765186
+"1k Resistor, US symbol","R0,R1,R2,R3,R4,R5",R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C17513
+"10k Resistor, US symbol",R7,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C17414
+"220R Resistor, US symbol","R8,R9",R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C17557
+5k ,"RV0,RV1,RV2,RV3,RV4,RV5",trimmer_alps-rk09k1130ah1,C470296
+"SW_Push Push button switch, generic, two pins","SW0,SW1,SW2,SW3,SW4,SW5",SW_Push_1P1T_NO_6x6mm_H9.5mm,C127509
+ATmega328P-AU ,U1,TQFP-32_7x7mm_P0.8mm,C132230
+"16MHz Four pin crystal, GND on pins 2 and 4",Y1,Crystal_SMD_3225-4Pin_3.2x2.5mm,C13738
