@@ -20,37 +20,37 @@
 
 extern uint8_t logResponse[128];
 
-extern uint8_t undefinedCC1[];
-extern uint8_t undefinedCC2[];
-extern uint8_t undefinedCC3[];
+extern uint8_t undefinedCC1[6];
+extern uint8_t undefinedCC2[6];
+extern uint8_t undefinedCC3[6];
 
-extern uint8_t volcaFMCC1[];
-extern uint8_t volcaFMCC2[];
-extern uint8_t volcaFMCC3[];
+extern uint8_t volcaFMCC1[6];
+extern uint8_t volcaFMCC2[6];
+extern uint8_t volcaFMCC3[6];
 
-extern uint8_t volcaKeysCC1[];
-extern uint8_t volcaKeysCC2[];
-extern uint8_t volcaKeysCC3[];
+extern uint8_t volcaKeysCC1[6];
+extern uint8_t volcaKeysCC2[6];
+extern uint8_t volcaKeysCC3[6];
 
-extern uint8_t volcaKeysCC1[];
-extern uint8_t volcaKeysCC2[];
-extern uint8_t volcaKeysCC3[];
+extern uint8_t volcaKeysCC1[6];
+extern uint8_t volcaKeysCC2[6];
+extern uint8_t volcaKeysCC3[6];
 
-extern uint8_t volcaBassCC1[];
-extern uint8_t volcaBassCC2[];
-extern uint8_t volcaBassCC3[];
+extern uint8_t volcaBassCC1[6];
+extern uint8_t volcaBassCC2[6];
+extern uint8_t volcaBassCC3[6];
 
-extern uint8_t volcaNubassCC1[];
-extern uint8_t volcaNubassCC2[];
-extern uint8_t volcaNubassCC3[];
+extern uint8_t volcaNubassCC1[6];
+extern uint8_t volcaNubassCC2[6];
+extern uint8_t volcaNubassCC3[6];
 
-extern uint8_t volcaKickCC1[];
-extern uint8_t volcaKickCC2[];
-extern uint8_t volcaKickCC3[];
+extern uint8_t volcaKickCC1[6];
+extern uint8_t volcaKickCC2[6];
+extern uint8_t volcaKickCC3[6];
 
-extern uint8_t volcaSampleCC1[];
-extern uint8_t volcaSampleCC2[];
-extern uint8_t volcaSampleCC3[];
+extern uint8_t volcaSampleCC1[6];
+extern uint8_t volcaSampleCC2[6];
+extern uint8_t volcaSampleCC3[6];
 
 void initSequence(const Led* ledsInner);
 void updateAllPots(Potentiometer* potsInner, uint8_t* avgValues);
@@ -61,5 +61,6 @@ uint8_t getFinalValue(const uint8_t initialValue, const uint8_t* logValues, cons
 uint8_t nextChannel(const uint8_t channel);
 void ledMeter(Led * leds, const uint8_t meter, uint8_t brightness);
 void mapCC(uint8_t* CCMap, const uint8_t ccCode);
+void copyCCMap(uint8_t* dest, const uint8_t* src);
 
 #endif

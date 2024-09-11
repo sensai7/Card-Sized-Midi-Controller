@@ -4,7 +4,6 @@
 #include "PushButton.h"
 #include "Potentiometer.h"
 #include "extra.h"
-#include <math.h>
 
 // Global variables
 uint8_t mode;
@@ -14,10 +13,10 @@ uint8_t logness;
 uint8_t setBrightness = DEFAULT_BRIGHTNESS;
 
 //CC banks
-uint8_t* CCMap;  //the current mode cc codes
-uint8_t* CC1;
-uint8_t* CC2;
-uint8_t* CC3;
+uint8_t CCMap[6];  //the current mode cc codes
+uint8_t CC1[6];
+uint8_t CC2[6];
+uint8_t CC3[6];
 
 // Peripheral definitions
 Led led0(LED0);
@@ -95,21 +94,21 @@ void loop() {
         channel = nextChannel(channel);
       } else {
         mode = MODE_CC1;
-        CCMap = CC1;
+        copyCCMap(CCMap, CC1);
       }
     } else if (button4.wasJustPressed()) {
       if (mode == MODE_CC2) {
         channel = nextChannel(channel);
       } else {
         mode = MODE_CC2;
-        CCMap = CC2;
+        copyCCMap(CCMap, CC2);
       }
     } else if (button5.wasJustPressed()) {
       if (mode == MODE_CC3) {
         channel = nextChannel(channel);
       } else {
         mode = MODE_CC3;
-        CCMap = CC3;
+        copyCCMap(CCMap, CC3);
       }
     }
 
@@ -128,8 +127,6 @@ void loop() {
     // leds
     ledUpdate(channel, mode, leds, pots, setBrightness);
   }
-
-
 
   // wait
   delay(LOOP_PAUSE_MS);

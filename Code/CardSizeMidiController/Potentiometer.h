@@ -1,3 +1,4 @@
+#include <stdint.h>
 #ifndef POTENTIOMETER_H
 #define POTENTIOMETER_H
 
@@ -11,7 +12,7 @@
 #define POT4 A2
 #define POT5 A5
 // Other macros
-#define SAMPLING 5  //samples for the averaging
+#define SAMPLING 11  //samples for the averaging
 
 // function protytypes
 int median(uint8_t *a, int n);
@@ -24,6 +25,7 @@ private:
   uint8_t readings[SAMPLING];  // Array to store readings for averaging
   uint8_t currentAveraged;     // Current averaged value
   uint8_t previousAveraged;    // Previous averaged value
+  uint8_t previousReading;
 
 public:
   Potentiometer(uint8_t pin);  // Constructor
@@ -31,7 +33,6 @@ public:
   void update();               // Read and update the average
   uint8_t getCurrentAverage(); // Get the averaged value
   bool previousDifersCurrent();// Returns true if currentAveraged is different than previousAveraged
-
 };
 
 #endif

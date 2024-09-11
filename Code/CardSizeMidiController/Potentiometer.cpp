@@ -17,7 +17,7 @@ int Potentiometer::readRaw() {
 }
 
 void Potentiometer::update() {
-  int rawValue = readRaw();                           // Read the raw analog value (0-1023)
+  uint16_t rawValue = readRaw();                         // Read the raw analog value (0-1023)
   uint8_t mappedValue = map(rawValue, 0, 1023, 0, 127);  // Map to 7 bit 0-127
   readings[index] = mappedValue;                         // Store the reading in the array
 
@@ -26,31 +26,46 @@ void Potentiometer::update() {
   currentAveraged = median(readings, SAMPLING);
 }
 
-// Get the averaged value of the potentiometer readings
-uint8_t Potentiometer::getCurrentAverage() {
-  return currentAveraged;
-}
+// void Potentiometer::update() {
+//   uint16_t rawValue = readRaw();                         // Read the raw analog value (0-1023)
+//   uint8_t mappedValue = map(rawValue, 0, 1023, 0, 127);  // Map to 7-bit (0-127)
 
-bool Potentiometer::previousDifersCurrent() {
-  return currentAveraged != previousAveraged;
-}
+//   if (abs(mappedValue - previousReading) >= 2) {
+//     readings[index] = mappedValue;
+//     index = (index + 1) % SAMPLING;
+//     previousReading = mappedValue;
 
+//     previousAveraged = currentAveraged;
+//     currentAveraged = median(readings, SAMPLING);
+//   }
+// }
+  
 
-int median(uint8_t *a, int n) {
-  int i, j;
-  for (i = 0; i < n - 1; i++) {
-    for (j = 0; j < n - i - 1; j++) {
-      if (a[j] > a[j + 1])
-        swap(&a[j], &a[j + 1]);
-    }
+  // Get the averaged value of the potentiometer readings
+  uint8_t Potentiometer::getCurrentAverage() {
+    return currentAveraged;
   }
-  n = (n + 1) / 2 - 1;
-  return a[n];
-}
 
-void swap(uint8_t *p, uint8_t *q) {
-  int t;
-  t = *p;
-  *p = *q;
-  *q = t;
-}
+  bool Potentiometer::previousDifersCurrent() {
+    return currentAveraged != previousAveraged;
+  }
+
+
+  int median(uint8_t * a, int n) {
+    int i, j;
+    for (i = 0; i < n - 1; i++) {
+      for (j = 0; j < n - i - 1; j++) {
+        if (a[j] > a[j + 1])
+          swap(&a[j], &a[j + 1]);
+      }
+    }
+    n = (n + 1) / 2 - 1;
+    return a[n];
+  }
+
+  void swap(uint8_t * p, uint8_t * q) {
+    int t;
+    t = *p;
+    *p = *q;
+    *q = t;
+  }

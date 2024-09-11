@@ -15,34 +15,34 @@ uint8_t logResponse[128] = { 0, 18, 29, 37, 42, 47, 51, 55, 58, 61, 63, 66, 68, 
 
 
 //Undefined CC
-uint8_t undefinedCC1[] = { 2, 6, 13, 14, 15, 0x1F };
-uint8_t undefinedCC2[] = { 7, 4, 5, 0x1F, 0x1F, 0x1F };
-uint8_t undefinedCC3[] = { 0, 1, 3, 8, 9, 0x1F };
+uint8_t undefinedCC1[6] = { 26, 27, 28, 29, 30, 31 };
+uint8_t undefinedCC2[6] = { 102, 103, 104, 105, 112, 113 };
+uint8_t undefinedCC3[6] = { 114, 115, 116, 117, 118, 119 };
 
 //preset CC
-uint8_t volcaFMCC1[] = { 40, 41, 42, 43, 44, 45 };    //TRANSPOSE, VELOCITY, MODULATOR ATTACK, MODLULATOR DECAY, CARRIER ATTACK, CARRIER DECAY
-uint8_t volcaFMCC2[] = { 46, 47, 48, 49, 50, 0x01 };  //LFO RATE, LFO PICTH DEPTH, ALGORITHM, ARP TYPE, ARP DIV
-uint8_t volcaFMCC3[] = { 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 };
+uint8_t volcaFMCC1[6] = { 40, 41, 42, 43, 44, 45 };    //TRANSPOSE, VELOCITY, MODULATOR ATTACK, MODLULATOR DECAY, CARRIER ATTACK, CARRIER DECAY
+uint8_t volcaFMCC2[6] = { 46, 47, 48, 49, 50, 0x01 };  //LFO RATE, LFO PICTH DEPTH, ALGORITHM, ARP TYPE, ARP DIV
+uint8_t volcaFMCC3[6] = { 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 };
 
-uint8_t volcaKeysCC1[] = { 5, 11, 40, 41, 42, 43 };       //PORTAMENTO, EXPRESSION, VOICE, OCTAVE, DETUNE, VCO EG INT
-uint8_t volcaKeysCC2[] = { 44, 45, 46, 47, 48, 49 };      //CUTOFF, VCF EG INT, LFO RATE, LFO PITCH, LFO CUTOFF INT, EG ATTACK
-uint8_t volcaKeysCC3[] = { 50, 51, 52, 53, 0x01, 0x01 };  //EG DECAY/RELEASE, EG SUSTAIN, DELAY TIME, DELAY FEEDBACK
+uint8_t volcaKeysCC1[6] = { 5, 11, 40, 41, 42, 43 };       //PORTAMENTO, EXPRESSION, VOICE, OCTAVE, DETUNE, VCO EG INT
+uint8_t volcaKeysCC2[6] = { 44, 45, 46, 47, 48, 49 };      //CUTOFF, VCF EG INT, LFO RATE, LFO PITCH, LFO CUTOFF INT, EG ATTACK
+uint8_t volcaKeysCC3[6] = { 50, 51, 52, 53, 0x01, 0x01 };  //EG DECAY/RELEASE, EG SUSTAIN, DELAY TIME, DELAY FEEDBACK
 
-uint8_t volcaBassCC1[] = { 5, 11, 40, 41, 42, 43 };   //SLIDE TIME, EXPRESSION, OCTAVE, LFO RATE, LFO INT, VCO PITCH 1
-uint8_t volcaBassCC2[] = { 44, 45, 46, 47, 48, 49 };  //VCO PITCH 2, VCO PITCH 3, EG ATTACK, EG DECAY/RELEASE, CUTOFF EG INT, GATE TIME
-uint8_t volcaBassCC3[] = { 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 };
+uint8_t volcaBassCC1[6] = { 5, 11, 40, 41, 42, 43 };   //SLIDE TIME, EXPRESSION, OCTAVE, LFO RATE, LFO INT, VCO PITCH 1
+uint8_t volcaBassCC2[6] = { 44, 45, 46, 47, 48, 49 };  //VCO PITCH 2, VCO PITCH 3, EG ATTACK, EG DECAY/RELEASE, CUTOFF EG INT, GATE TIME
+uint8_t volcaBassCC3[6] = { 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 };
 
-uint8_t volcaNubassCC1[] = { 40, 41, 42, 43, 44, 45 };    //VTO PITCH, VTO SATURATION, VTO LEVEL, VCF CUTOFF, VCF PEAK, VCF ATTACK
-uint8_t volcaNubassCC2[] = { 46, 47, 48, 49, 50, 0x01 };  //VCF DECAY, VCF EG INT, ACCENT, LFO RATE, LFO INT
-uint8_t volcaNubassCC3[] = { 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 };
+uint8_t volcaNubassCC1[6] = { 40, 41, 42, 43, 44, 45 };    //VTO PITCH, VTO SATURATION, VTO LEVEL, VCF CUTOFF, VCF PEAK, VCF ATTACK
+uint8_t volcaNubassCC2[6] = { 46, 47, 48, 49, 50, 0x01 };  //VCF DECAY, VCF EG INT, ACCENT, LFO RATE, LFO INT
+uint8_t volcaNubassCC3[6] = { 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 };
 
-uint8_t volcaKickCC1[] = { 40, 41, 42, 43, 44, 45 };      //PULSE COLOUR, PULSE LEVEL, AMP ATTACK, AMP DECAY, DRIVE, TONE
-uint8_t volcaKickCC2[] = { 46, 47, 48, 49, 0x01, 0x01 };  //RESONATOR PITCH, RESONATOR BEND, RESONATOR TIME, ACCENT
-uint8_t volcaKickCC3[] = { 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 };
+uint8_t volcaKickCC1[6] = { 40, 41, 42, 43, 44, 45 };      //PULSE COLOUR, PULSE LEVEL, AMP ATTACK, AMP DECAY, DRIVE, TONE
+uint8_t volcaKickCC2[6] = { 46, 47, 48, 49, 0x01, 0x01 };  //RESONATOR PITCH, RESONATOR BEND, RESONATOR TIME, ACCENT
+uint8_t volcaKickCC3[6] = { 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 };
 
-uint8_t volcaSampleCC1[] = { 40, 41, 42, 43, 44, 45 };        //SAMPLE START POINT, SAMPLE LENGTH, HI CUT, SPEED, PITCH EG INT, PITCH EG ATTACK
-uint8_t volcaSampleCC2[] = { 46, 47, 48, 0x01, 0x01, 0x01 };  //PITCH EG DECAY, AMP EG ATTACK, AMP EG DECAY
-uint8_t volcaSampleCC3[] = { 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 };
+uint8_t volcaSampleCC1[6] = { 40, 41, 42, 43, 44, 45 };        //SAMPLE START POINT, SAMPLE LENGTH, HI CUT, SPEED, PITCH EG INT, PITCH EG ATTACK
+uint8_t volcaSampleCC2[6] = { 46, 47, 48, 0x01, 0x01, 0x01 };  //PITCH EG DECAY, AMP EG ATTACK, AMP EG DECAY
+uint8_t volcaSampleCC3[6] = { 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 };
 
 
 void initSequence(const Led* ledsInner) {
@@ -101,13 +101,9 @@ void ledUpdate(const uint8_t channel, const uint8_t mode, Led* ledsInner, const 
     }
   } else {  //CC Modes -> lit the current channel led
     for (uint8_t i = 0; i < 6; i++) {
+      if (i == channel) ledsInner[i].setBrightness(setBrightness);
+      if (i == mode) ledsInner[i].setBrightness(1);
       (i == channel || i == mode) ? ledsInner[i].turnOn() : ledsInner[i].turnOff();
-      if (i == mode) {
-        ledsInner[i].setBrightness(1);
-      }
-      if (i == channel) {
-        ledsInner[i].setBrightness(setBrightness);
-      }
     }
   }
 }
@@ -123,39 +119,39 @@ void selectPreset(uint8_t* CC1Inner, uint8_t* CC2Inner, uint8_t* CC3Inner, Led* 
   }
   switch (preset) {
     case 0:
-      CC1Inner = volcaFMCC1;
-      CC2Inner = volcaFMCC2;
-      CC3Inner = volcaFMCC3;
+      copyCCMap(CC1Inner, volcaFMCC1);
+      copyCCMap(CC2Inner, volcaFMCC2);
+      copyCCMap(CC3Inner, volcaFMCC3);
       break;
     case 1:
-      CC1Inner = volcaKeysCC1;
-      CC2Inner = volcaKeysCC2;
-      CC3Inner = volcaKeysCC3;
+      copyCCMap(CC1Inner, volcaKeysCC1);
+      copyCCMap(CC2Inner, volcaKeysCC2);
+      copyCCMap(CC3Inner, volcaKeysCC3);
       break;
     case 2:
-      CC1Inner = volcaBassCC1;
-      CC2Inner = volcaBassCC2;
-      CC3Inner = volcaBassCC3;
+      copyCCMap(CC1Inner, volcaBassCC1);
+      copyCCMap(CC2Inner, volcaBassCC2);
+      copyCCMap(CC3Inner, volcaBassCC3);
       break;
     case 3:
-      CC1Inner = volcaNubassCC1;
-      CC2Inner = volcaNubassCC2;
-      CC3Inner = volcaNubassCC3;
+      copyCCMap(CC1Inner, volcaNubassCC1);
+      copyCCMap(CC2Inner, volcaNubassCC2);
+      copyCCMap(CC3Inner, volcaNubassCC3);
       break;
     case 4:
-      CC1Inner = volcaKickCC1;
-      CC2Inner = volcaKickCC2;
-      CC3Inner = volcaKickCC3;
+      copyCCMap(CC1Inner, volcaKickCC1);
+      copyCCMap(CC2Inner, volcaKickCC2);
+      copyCCMap(CC3Inner, volcaKickCC3);
       break;
     case 5:
-      CC1Inner = volcaSampleCC1;
-      CC2Inner = volcaSampleCC2;
-      CC3Inner = volcaSampleCC3;
+      copyCCMap(CC1Inner, volcaSampleCC1);
+      copyCCMap(CC2Inner, volcaSampleCC2);
+      copyCCMap(CC3Inner, volcaSampleCC3);
       break;
     default:
-      CC1Inner = undefinedCC1;
-      CC2Inner = undefinedCC2;
-      CC3Inner = undefinedCC3;
+      copyCCMap(CC1Inner, undefinedCC1);
+      copyCCMap(CC2Inner, undefinedCC2);
+      copyCCMap(CC3Inner, undefinedCC3);
       break;
   }
   if (preset >= 0) {
@@ -166,9 +162,11 @@ void selectPreset(uint8_t* CC1Inner, uint8_t* CC2Inner, uint8_t* CC3Inner, Led* 
 }
 
 uint8_t getFinalValue(const uint8_t initialValue, const uint8_t* logValues, const int8_t randomness, const uint8_t logness) {
-  uint8_t finalValue;
-  uint8_t variation = random(-randomness, randomness);
+  int16_t finalValue;
+  int8_t variation = random(-randomness, randomness);
   finalValue = (initialValue * (255 - logness)) / 255 + (logValues[initialValue] * logness) / 255 + variation;
+  if (finalValue < 0) finalValue = 0;
+  if (finalValue > 127) finalValue = 127;
   return finalValue;
 }
 
@@ -189,7 +187,11 @@ void ledMeter(Led* leds, const uint8_t meter, uint8_t brightness) {
 }
 
 void mapCC(uint8_t* CCMap, const uint8_t ccCode) {
-  uint8_t newMap[6];
-  for (uint8_t i = 0; i < 6; i++) newMap[i] = ccCode;
-  CCMap = newMap;
+  for (uint8_t i = 0; i < 6; i++) CCMap[i] = ccCode;
+}
+
+void copyCCMap(uint8_t* dest, const uint8_t* src) {
+  for (uint8_t i = 0; i < 6; i++) {
+    dest[i] = src[i];
+  }
 }
