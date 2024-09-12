@@ -1,7 +1,7 @@
 # Card Size Midi Controller
  Standard card sized MIDI controller, for level, pan, modulation wheel and control changes. Both hardware and software are open source, you can modify and use as you please.
 
-![Board](https://i.imgur.com/GdnhQXn.png)
+![Board](https://i.imgur.com/lhvjsof.png)
 
 ## Ordering your own board
 This repository includes the necessary files to order your own board with the SMT components pre-soldered from JLCPCB's assembly service. To do so, follow this: 
