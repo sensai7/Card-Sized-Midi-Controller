@@ -18,7 +18,7 @@ int Potentiometer::readRaw() {
 
 void Potentiometer::update() {
   uint16_t rawValue = readRaw();                         // Read the raw analog value (0-1023)
-  uint8_t mappedValue = map(rawValue, 0, 1023, 0, 127);  // Map to 7 bit 0-127
+  uint8_t mappedValue = rawValue >> 3;                   // Map to 7 bit 0-127
   readings[index] = mappedValue;                         // Store the reading in the array
 
   index = (index + 1) % SAMPLING;
@@ -26,20 +26,6 @@ void Potentiometer::update() {
   currentAveraged = median(readings, SAMPLING);
 }
 
-// void Potentiometer::update() {
-//   uint16_t rawValue = readRaw();                         // Read the raw analog value (0-1023)
-//   uint8_t mappedValue = map(rawValue, 0, 1023, 0, 127);  // Map to 7-bit (0-127)
-
-//   if (abs(mappedValue - previousReading) >= 2) {
-//     readings[index] = mappedValue;
-//     index = (index + 1) % SAMPLING;
-//     previousReading = mappedValue;
-
-//     previousAveraged = currentAveraged;
-//     currentAveraged = median(readings, SAMPLING);
-//   }
-// }
-  
 
   // Get the averaged value of the potentiometer readings
   uint8_t Potentiometer::getCurrentAverage() {

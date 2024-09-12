@@ -102,7 +102,7 @@ void ledUpdate(const uint8_t channel, const uint8_t mode, Led* ledsInner, const 
   } else {  //CC Modes -> lit the current channel led
     for (uint8_t i = 0; i < 6; i++) {
       if (i == channel) ledsInner[i].setBrightness(setBrightness);
-      if (i == mode) ledsInner[i].setBrightness(1);
+      else if (i == mode) ledsInner[i].setBrightness(1);
       (i == channel || i == mode) ? ledsInner[i].turnOn() : ledsInner[i].turnOff();
     }
   }
