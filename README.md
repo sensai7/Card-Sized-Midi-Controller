@@ -4,6 +4,11 @@
 ![Board](https://i.imgur.com/lhvjsof.png)
 
 ## Ordering your own board
+### Tindie
+
+This device is available at [Tindie](https://www.tindie.com/products/sensai7/card-sized-midi-controller/).
+
+### JLCPCB
 This repository includes the necessary files to order your own board with the SMT components pre-soldered from JLCPCB's assembly service. To do so, follow this: 
 
  1. Go to their order page [LINK](https://cart.jlcpcb.com/quote) and upload the zipped gerber files. The default options should be fine, but you can customize your own board as you wish, the only thing I recommed changing is under "Remove Order Number" to "Specify a location"
