@@ -1,4 +1,6 @@
 
 *.bak
 *.kicad_pcb-bak
-*.MATLABDriveTag
+**/.MATLABDriveTag
+*.lck
+Kicad/CardSizeMidiController/CardSizeMidiController-backups/
