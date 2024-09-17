@@ -11,9 +11,22 @@ This device is available at [Tindie](https://www.tindie.com/products/sensai7/car
 ### JLCPCB
 This repository includes the necessary files to order your own board with the SMT components pre-soldered from JLCPCB's assembly service. To do so, follow this: 
 
- 1. Go to their order page [LINK](https://cart.jlcpcb.com/quote) and upload the zipped gerber files. The default options should be fine, but you can customize your own board as you wish, the only thing I recommed changing is under "Remove Order Number" to "Specify a location"
- 2. In the SMT Assembly select "Assemble top side", the quantity of boards (minimum is 2 as of today) and tooling holes added by JLCPCB.
- 3. Add the BOM and CPL files when prompted and continue through the process.
+1. from this Github page click `Code > download zip`.
+2. Uncompress the zip.
+3. Go to jlcpcb.com or any other pcb maker. I'll assume you're using JLC for the next steps.
+4. Select `instant quote` and when prompted to select a gerber file, select the file `\Kicad\CardSizeMidiController\production\CardSizeMidiController.zip`. From here there will be a lot of options but most of them can be left as default. The only “mandatory” change is `Mark on PCB` which should be changed to `Order Number (Specify Position)`. You can also optionaly change:
+* the quantity (5 by default)
+* the color, which is green by default.
+* PCB thickness can also be changed at will but I think too thin or too thick and the price increases a little bit.
+
+If you go like this and checkout the order you will be buying the naked PCBs with nothing mounted. If you want at least to mount the SMT components then:
+
+1. Switch the PCB Assembly on at the bottom of the menu in the JLC order page.
+2. Everything can be left on the default values (Top side, Economic, etc) but you can choose to assemble just a couple of boards instead of all of them. It’ll save you some money but you’ll be left with 3 naked boards.
+3. Hit next twice and you'll be asked to upload a BOM file and a CPL file. They’re both in the same folder as the gerber zip from before, they’re respectively `bom.csv` and `positions.csv`.
+4. Go to the next screen and you’ll see a table with all the components that are about to be assembled.
+5. Next screen will show you a 3D render of the board with the components. For some reason Kicad doesn't export all well the positions and angles, so keep an eye on where the things are being placed. Particularly the position of the USB connector, the potentiometers, and the angle of the push buttons.
+6. After that screen you can continue until ordering them.
 
 ## Writing the firmware
 
