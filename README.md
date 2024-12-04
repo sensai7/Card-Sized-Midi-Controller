@@ -42,7 +42,7 @@ To burn the firmware you'll need an Arduino Uno board or any Arduino that can be
  4. Select the appropiate board/port in the Arduino IDE and go to tools > Burn bootloader. This bootloader will be overwritten in a second, but burning it now will activate some useful fuses inside the microcontroller, particularly the one selecting an external crystal oscillator. This needs to be done only once per chip.
  5. Open the firmware script "\Code\CardSizeMidiController\CardSizeMidiController.ino" or any custom script in the Arduino IDE and holding shift press the upload button, or select Sketch > Upload using uploader. After a few seconds of LED flashing the chip should have the firmware ready.
 
-## How to use ()
+## How to use (Standard firmware)
 Each button selects a different mode. The turned on LEDs signal the active midi channels.
 
  * When LEVEL mode is activated, each potentiometer change the Level Control Change (0x07) from channels 1 to 6.
@@ -72,3 +72,17 @@ Default presets:
  4. Korg Volca Nubass preset
  5. Korg Volca Kick preset
  6. Korg Volca Sample preset
+
+## How to use (Korg NTS-3 firmware)
+This firmware allows more functionality when used along with a Korg NTS-3 kaoss pad kit. In this firmware the controls act like follow:
+
+ * Pressing the 1st push button, enters FX1 mode. In this mode the potentiometers change Control changes (16, 48, 17, 49, 18, 50), corresponding to PADX (coarse), PADX (fine), PADY (coarse), PADY (fine), DEPTH (coarse), and DEPTH (fine) respectively, for FX1
+ * Pressing buttons 2, 3 and 4 change the mode to FX2, FX3 and FX4 respectively. The potentiometer controls are arranged the same as in FX1 mode except they affect the corresponding mode FX number.
+ * Button 5 changes the mode to TOTAL FX mode, the potentiometer controls are arranged the same as in FX1~4 but they affect the total FX.
+ * Button 6 changes the mode to MASTER AND SELECTION mode, in this mode the potentiometers control Master Volume (coarse), Master Volume (fine), FX1 SELECTION, FX2 SELECTION, FX3 SELECTION, and FX4 SELECTION respectively.
+ * In modes FX1~4, successive button presses freeze and unfreeze the selected FX, this is reflected by the brightness of the selected mode LED.
+
+ Along with the three double-button settings present in the regular firmware (Randomness, linear-log setting, and LED brightness), there are extra double-button controls:
+
+ * While holding Button 5, pressing buttons 1~4 toggle FX1~4 TOUCH on and off.
+ * While holding Button 6, pressing buttons 1~4 toggle FX1~4 on and off.
