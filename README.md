@@ -84,5 +84,5 @@ This firmware allows more functionality when used along with a Korg NTS-3 kaoss 
 
  Along with the three double-button settings present in the regular firmware (Randomness, linear-log setting, and LED brightness), there are extra double-button controls:
 
- * While holding Button 5, pressing buttons 1~4 toggle FX1~4 TOUCH on and off.
- * While holding Button 6, pressing buttons 1~4 toggle FX1~4 on and off.
+ * While holding Button 5, pressing buttons 1 to 4 toggle FX1 to 4 TOUCH on and off.
+ * While holding Button 6, pressing buttons 1 to 4 toggle FX1 to 4 on and off.
