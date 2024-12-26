@@ -23,9 +23,11 @@ void Potentiometer::update() {
 
   index = (index + 1) % SAMPLING;
   previousAveraged = currentAveraged;
-  currentAveraged = median(readings, SAMPLING);
+  uint8_t medianV = median(readings, SAMPLING);
+  if ((abs(medianV-previousAveraged)>1) || medianV == 0 || medianV == 127){
+    currentAveraged = medianV;
+  }
 }
-
 
   // Get the averaged value of the potentiometer readings
   uint8_t Potentiometer::getCurrentAverage() {
@@ -33,9 +35,8 @@ void Potentiometer::update() {
   }
 
   bool Potentiometer::previousDifersCurrent() {
-    return currentAveraged != previousAveraged;
+      return currentAveraged != previousAveraged;
   }
-
 
   int median(uint8_t * a, int n) {
     int i, j;
